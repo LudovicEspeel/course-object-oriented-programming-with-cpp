@@ -24,7 +24,7 @@ Visual Studio Code is a source code editor developed by Microsoft for Windows, L
 
 Checkout the [Software Installation Guide](https://software-installation-guide.netlify.app/) on how to install and setup Visual Studio Code.
 
-## C++ Compiler for Windows
+## Compiling C++ on Windows
 
 As a compiler you can make use of **MinGW** which stands for "Minimalist GNU for Windows", which is a native Windows port of the GNU Compiler Collection (GCC).
 
@@ -37,6 +37,12 @@ Checkout the [Software Installation Guide](https://software-installation-guide.n
 ## Compiling C++ on Linux
 
 Checkout the [Software Installation Guide](https://software-installation-guide.netlify.app/) on how to install and setup the C++ tools on Linux.
+
+## Compiling C++ using Windows Subsystem for Linux
+
+The Windows Subsystem for Linux (WSL) lets developers install a Linux distribution (such as Ubuntu, OpenSUSE, Kali, Debian, Arch Linux, etc) and use Linux applications, utilities, and Bash command-line tools directly on Windows, unmodified, without the overhead of a traditional virtual machine or dualboot setup.
+More info how to setup: https://learn.microsoft.com/en-us/windows/wsl/install. 
+Prepend the Linux commands always with `wsl` in the PowerShell terminal.
 
 ## Hello World in C++
 
