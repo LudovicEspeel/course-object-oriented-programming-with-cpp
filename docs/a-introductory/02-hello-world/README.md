@@ -41,7 +41,7 @@ Checkout the [Software Installation Guide](https://software-installation-guide.n
 ## Compiling C++ using Windows Subsystem for Linux
 
 The Windows Subsystem for Linux (WSL) lets developers install a Linux distribution (such as Ubuntu, OpenSUSE, Kali, Debian, Arch Linux, etc) and use Linux applications, utilities, and Bash command-line tools directly on Windows, unmodified, without the overhead of a traditional virtual machine or dualboot setup.
-More info how to setup: https://learn.microsoft.com/en-us/windows/wsl/install. 
+More info how to setup: [https://learn.microsoft.com/en-us/windows/wsl/install](https://learn.microsoft.com/en-us/windows/wsl/install). 
 Prepend the Linux commands always with `wsl` in the PowerShell terminal.
 
 ## Hello World in C++

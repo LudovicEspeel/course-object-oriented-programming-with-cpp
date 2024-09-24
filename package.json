@@ -11,7 +11,7 @@
     "author": "Ludovic Espeel <ludovic.espeel@vives.be>",
     "license": "SEE LICENSE IN README.md",
     "devDependencies": {
-        "vuepress": "^1.8.2",
+        "vuepress": "^1.9.10",
         "vuepress-plugin-code-copy": "^1.0.6",
         "vuepress-plugin-zooming": "^1.1.2"
     }
