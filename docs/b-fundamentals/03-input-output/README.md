@@ -163,7 +163,6 @@ The `cin` object can also be used with other methods. Some of the commonly used 
 * `cin.ignore()`: Ignores a number of characters from the input stream.
 * `cin.eof()`: Returns a nonzero value if the end-of-file (eof) is reached.
 * `cin.clear()`: Clear error flags on input stream
-* `cin.ignore()`: Ignore some characters in the input buffer
 
 More info about these methods can be found at [http://www.cplusplus.com/reference/istream/istream/](http://www.cplusplus.com/reference/istream/istream/).
 
