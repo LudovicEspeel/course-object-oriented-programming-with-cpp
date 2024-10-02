@@ -50,7 +50,6 @@ for (unsigned int i = 0; i < NUMBERS_SIZE; i++) {
 }
 
 cout << "The average equals " << (sum/NUMBERS_SIZE) << endl;
-return 0;
 ```
 
 ::: output
