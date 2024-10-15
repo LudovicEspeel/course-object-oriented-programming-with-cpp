@@ -62,7 +62,7 @@ To create custom functions two components are required:
 The general form of a C++ function definition looks like the template below
 
 ```cpp
-<return_type> function_name( <comma_separated_parameter_list> ) {
+<return_type> functionName( <comma_separated_parameter_list> ) {
   // Statements (body / implementation)
   return <value>;  // In case of a non-void function
 }
@@ -104,7 +104,7 @@ A function declaration tells the compiler about a functions name and how to call
 A function declaration has the following parts:
 
 ```cpp
-<return_type> function_name( <comma_separated_parameter_list> );
+<return_type> functionName( <comma_separated_parameter_list> );
 ```
 
 In other words the function declaration is exactly the same as the function header but without the attached body found with the actual definition.
@@ -167,10 +167,10 @@ When you define a function, you can specify a default value for each of the **la
 
 This is done by using the assignment operator and assigning values for the arguments in the function definition. If a value for that parameter is not passed when the function is called, the default value is used, but if a value is specified, this default value is ignored and the passed value is used instead.
 
-Let us consider a function `print_terminal()` that prints out the terminal sign of a console (for example `>` in powershell).
+Let us consider a function `printTerminal()` that prints out the terminal sign of a console (for example `>` in powershell).
 
 ```cpp
-void print_terminal(char sign = '>') {
+void printTerminal(char sign = '>') {
   std::cout << sign;
 }
 ```
@@ -180,17 +180,17 @@ If no argument is passed, the default `>` is printed. In the other case the pass
 ```cpp
 #include <iostream>
 
-void print_terminal(char sign = '>') {
+void printTerminal(char sign = '>') {
   std::cout << sign;
 }
 
 int main() {
   // Using the default symbol
-  print_terminal();
+  printTerminal();
   std::cout << std::endl;
 
   // Passing another symbol
-  print_terminal('$');
+  printTerminal('$');
   std::cout << std::endl;
   return 0;
 }
@@ -321,7 +321,7 @@ For passing a multidimensional array to a function in C++ one will need to speci
 
 using namespace std;
 
-void print_matrix(int matrix[][4], size_t rows, size_t cols) {
+void printMatrix(int matrix[][4], size_t rows, size_t cols) {
   cout << "Matrix: " << endl;
   for (int r = 0; r < rows; r++) {
     for (int c = 0; c < cols; c++) {
@@ -338,7 +338,7 @@ int main() {
     {4, 5, 6, 7}
   };
 
-  print_matrix(matrix, 2, 4);
+  printMatrix(matrix, 2, 4);
 
   return 0;
 }
@@ -429,13 +429,13 @@ int main() {
 
 ### 4. Changing Array Values
 
-*What is going on here? Why can the `mess_it_up` function change the values of the passed array?*
+*What is going on here? Why can the `messItUp` function change the values of the passed array?*
 
 ```cpp
 #include <iostream>
 using namespace std;
 
-void mess_it_up(int numbers[], size_t size) {
+void messItUp(int numbers[], size_t size) {
   for (unsigned int i = 0; i < size; i++) {
     numbers[i] = numbers[i] * 1337;
   }
@@ -445,7 +445,7 @@ int main() {
 
   int numbers[] = { 2, 8, 15 };
 
-  mess_it_up(numbers, sizeof(numbers)/sizeof(numbers[0]));
+  messItUp(numbers, sizeof(numbers)/sizeof(numbers[0]));
 
   for (unsigned int i = 0; i < sizeof(numbers)/sizeof(numbers[0]); i++) {
     cout << numbers[i] << " ";

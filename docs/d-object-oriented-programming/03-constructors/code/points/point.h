@@ -1,4 +1,4 @@
-// point.h
+// Point.h
 #pragma once
 
 namespace Geometry {
@@ -12,12 +12,12 @@ namespace Geometry {
 
     // Methods
     public:
-      void move_to(double x, double y);
-      void move_by(double deltaX, double deltaY);
+      void moveTo(double x, double y);
+      void moveBy(double deltaX, double deltaY);
 
     public:
-      double get_x(void) const;
-      double get_y(void) const;
+      double getX(void) const;
+      double getY(void) const;
 
     // Attributes (instance variables)
     private:

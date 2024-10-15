@@ -4,8 +4,6 @@ description: needs to be done
 
 # Using Objects
 
-*Warning! This chapter is in a very early draft state!*
-
 Before we can *use* objects we need to create them based on a class. The standard library has some classes that we can instantiate in our applications.
 
 ## Creating Objects

@@ -2,7 +2,7 @@
 // g++ main.cpp point.cpp -o points
 
 #include <iostream>
-#include "point.h"
+#include "Point.h"
 
 using namespace std;
 
@@ -12,7 +12,7 @@ int main() {
   Geometry::Point center(8, 77);
 
   cout << "The point is at ["
-    << center.get_x() << ", " << center.get_y()
+    << center.getX() << ", " << center.getY()
     << "]" << endl;
 
   return 0;

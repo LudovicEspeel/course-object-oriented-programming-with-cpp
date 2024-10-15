@@ -16,7 +16,7 @@ The main purpose of a constructor is to **initialize new objects and put them in
 Let's create a basic constructor for the `Point` class that initializes the coordinates to the user supplied values. First a prototype needs to be added to the class definition.
 
 ```cpp
-// point.h
+// Point.h
 #pragma once
 
 namespace Geometry {
@@ -29,12 +29,12 @@ namespace Geometry {
 
     // Methods
     public:
-      void move_to(double x, double y);
-      void move_by(double deltaX, double deltaY);
+      void moveTo(double x, double y);
+      void moveBy(double deltaX, double deltaY);
 
     public:
-      double get_x(void) const;
-      double get_y(void) const;
+      double getX(void) const;
+      double getY(void) const;
 
     // Attributes (instance variables)
     private:
@@ -48,33 +48,33 @@ namespace Geometry {
 
 The constructor here takes two arguments, namely the x and y coordinates. While it is not mandatory to split up the constructors and methods, it often creates a clearer image for the user of the class.
 
-The implementation of the constructor can actually use the `move_to()` method to implement it behavior. That's DRY!
+The implementation of the constructor can actually use the `moveTo()` method to implement it behavior. That's DRY!
 
 ```cpp
 // point.cpp
-#include "point.h"
+#include "Point.h"
 
 namespace Geometry {
 
   Point::Point(double x, double y) {
-    move_to(x, y);
+    moveTo(x, y);
   }
 
-  void Point::move_to(double x, double y) {
+  void Point::moveTo(double x, double y) {
     this->x = x;
     this->y = y;
   }
   
-  void Point::move_by(double deltaX, double deltaY) {
+  void Point::moveBy(double deltaX, double deltaY) {
     this->x += deltaX;
     this->y += deltaY;
   }
 
-  double Point::get_x(void) const {
+  double Point::getX(void) const {
     return x;
   }
 
-  double Point::get_y(void) const {
+  double Point::getY(void) const {
     return y;
   }
 
@@ -85,7 +85,7 @@ Now when creating `Point` objects, the coordinates can be set via the constructo
 
 ```cpp
 #include <iostream>
-#include "point.h"
+#include "Point.h"
 
 using namespace std;
 
@@ -95,7 +95,7 @@ int main() {
   Geometry::Point center(8, 77);
 
   cout << "The point is at ["
-    << center.get_x() << ", " << center.get_y()
+    << center.getX() << ", " << center.getY()
     << "]" << endl;
 
   return 0;
@@ -130,7 +130,7 @@ Luckily in C++, a class can have more than one constructor, as long as each has 
 So to add a default constructor to the `Point` class we first need to declare it in the class:
 
 ```cpp
-// point.h
+// Point.h
 #pragma once
 
 namespace Geometry {
@@ -144,12 +144,12 @@ namespace Geometry {
 
     // Methods
     public:
-      void move_to(double x, double y);
-      void move_by(double deltaX, double deltaY);
+      void moveTo(double x, double y);
+      void moveBy(double deltaX, double deltaY);
 
     public:
-      double get_x(void) const;
-      double get_y(void) const;
+      double getX(void) const;
+      double getY(void) const;
 
     // Attributes (instance variables)
     private:
@@ -161,35 +161,35 @@ namespace Geometry {
 };
 ```
 
-The implementation of the default constructor can actually be left empty because the attributes are already being initialized to zero. It can however be argued that it's cleaner to call the `move_to()` method using two zero values.
+The implementation of the default constructor can actually be left empty because the attributes are already being initialized to zero. It can however be argued that it's cleaner to call the `moveTo()` method using two zero values.
 
 ```cpp
 // point.cpp
-#include "point.h"
+#include "Point.h"
 
 namespace Geometry {
 
   Point::Point(void) { }
 
   Point::Point(double x, double y) {
-    move_to(x, y);
+    moveTo(x, y);
   }
 
-  void Point::move_to(double x, double y) {
+  void Point::moveTo(double x, double y) {
     this->x = x;
     this->y = y;
   }
   
-  void Point::move_by(double deltaX, double deltaY) {
+  void Point::moveBy(double deltaX, double deltaY) {
     this->x += deltaX;
     this->y += deltaY;
   }
 
-  double Point::get_x(void) const {
+  double Point::getX(void) const {
     return x;
   }
 
-  double Point::get_y(void) const {
+  double Point::getY(void) const {
     return y;
   }
 

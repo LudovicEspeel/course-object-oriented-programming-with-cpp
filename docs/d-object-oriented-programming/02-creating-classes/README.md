@@ -60,16 +60,16 @@ int main(void) {
 
 This will however make for a terrible mess once your program starts to become bigger. Secondly, it is not possible to share classes like this between different programs without copy pasting the code from one application to another. And that's a big no-no.
 
-For these reasons, class definitions will always be placed in separate files called **header files**. These files carry the same name as the class, though mostly in lower case letters (preferred *snake_case*, although not mandatory), and have the extension ".h". Take for example a class called `RgbLed`, the header file would be called `rgb_led.h`.
+For these reasons, class definitions will always be placed in separate files called **header files**. These files carry the same name as the class, though mostly in lower case letters (preferred *snake_case*, although not mandatory, can also be PascalCase --&gt; we'll apply this), and have the extension ".h". Take for example a class called `RgbLed`, the header file would be called `RgbLed.h`.
 
 ::: warning Case-sensitivity
 Do take note that where Windows is not case-sensitive, other operating systems might be. Take for example Linux. This means that if you are not careful when naming and including your files, you might have a working application on Windows but not on Linux.
 :::
 
-Let's continue with a class `Point` (representing a point in 2D space), where the class definition is placed inside a file called `point.h`.
+Let's continue with a class `Point` (representing a point in 2D space), where the class definition is placed inside a file called `Point.h`.
 
 ```cpp
-// point.h
+// Point.h
 class Point {
 };
 ```
@@ -78,7 +78,7 @@ However if you want to create objects of your class somewhere else you will need
 
 ```cpp
 #include <iostream>   // Include standard/external libraries
-#include "point.h"    // Include project header files
+#include "Point.h"    // Include project header files
 
 using namespace std;
 
@@ -105,9 +105,9 @@ Now what happens if you include the same header file multiple times? Actually C+
 This is where **include guards** come into play. These are a safety mechanism that will make the preprocessor only include header files that have not been included yet. A typical include guard looks something like this:
 
 ```cpp
-// point.h
-#ifndef _HEADER_POINT_
-#define _HEADER_POINT_
+// Point.h
+#ifndef POINT_H
+#define POINT_H
 
 class Point {
 
@@ -116,7 +116,7 @@ class Point {
 #endif
 ```
 
-Basically it does as the directives state. If the label `_HEADER_POINT_` has not yet been defined, then define it, include the class definition and end it. If the label has already been defined then the class definition is not included anymore. The label can be chosen freely by the developer.
+Basically it does as the directives state. If the label `POINT_H` has not yet been defined, then define it, include the class definition and end it. If the label has already been defined then the class definition is not included anymore. The label can be chosen freely by the developer.
 
 These include guards are **only of importance for the preprocessor**, therefore they are prefixed with a hashtag `#`.
 
@@ -125,7 +125,7 @@ One disadvantage of the include guards as shown above it that you need to declar
 Rewriting the previous example using the `#pragma once` directive looks like this:
 
 ```cpp
-// point.h
+// Point.h
 #pragma once
 
 class Point {
@@ -140,7 +140,7 @@ It also makes the code shorter and more clear.
 When defining classes one should **always place them inside a namespace**. This can be achieved by surrounding the class definition with a namespace definition as shown in the next code snippet.
 
 ```cpp
-// point.h
+// Point.h
 #pragma once
 
 namespace Geometry {
@@ -224,7 +224,7 @@ Make sure that the name of your namespace is unique if possible. The chances of 
 Defining attributes is very similar to creating a variable inside a method or function. Let's add an `x` and `y` value to the `Point` class:
 
 ```cpp
-// point.h
+// Point.h
 #pragma once
 
 namespace Geometry {
@@ -300,10 +300,10 @@ This consists of:
 * The name of a method should be a very clear and indicating name of what the actual method does. There are no real naming conventions in C++ as there are in C# or Java. The most important rule is to stay consistent.
 * A comma separated list of the arguments, and for the prototype the only thing that is mandatory are the types. This means that you actually don't have to state the names. However most of the time is good practice to do it anyway.
 
-Let's for example declare a method called `move_to` that does not return anything (the return type is therefore `void`). It does however take 2 arguments, more specifically the new `x` and `y` coordinates. Again as with the attributes, we can specify the access modifier for all method declarations following.
+Let's for example declare a method called `moveTo` that does not return anything (the return type is therefore `void`). It does however take 2 arguments, more specifically the new `x` and `y` coordinates. Again as with the attributes, we can specify the access modifier for all method declarations following.
 
 ```cpp
-// point.h
+// Point.h
 #pragma once
 
 namespace Geometry {
@@ -312,7 +312,7 @@ namespace Geometry {
 
     // Methods
     public:
-      void move_to(double x, double y);
+      void moveTo(double x, double y);
 
     // Attributes (instance variables)
     private:
@@ -336,15 +336,15 @@ Why? Because when we supply a class to a user of that class we may not want to p
 Do note that it is also possible to place the definition of a method inside the header file. This is called inline methods. The inline methods are a C++ enhancement feature to increase the execution time of a program. When compiling the application, the compiler can be instructed to make methods inline, meaning that a method call in code is actually replaced with the code inside of that method. This does not mean that it is a good idea to make every method inline, as this will be a burden on the actual memory usage of your class. Actually, compilers these days are smart enough to decide for themselves if they should make methods inline or not.
 :::
 
-Let us start by implementing a method that allows us to change the coordinates of a `Point` object. This is called a **setter method** because it does nothing else but set a part of the state of the object. To actually implement the `move_to` method, we will need to create a file with the same name as the header file, excluding the extension, which should now be `.cpp`.
+Let us start by implementing a method that allows us to change the coordinates of a `Point` object. This is called a **setter method** because it does nothing else but set a part of the state of the object. To actually implement the `moveTo` method, we will need to create a file with the same name as the header file, excluding the extension, which should now be `.cpp`.
 
 ```cpp
-// point.cpp
-#include "point.h"
+// Point.cpp
+#include "Point.h"
 
 namespace Geometry {
 
-  void Point::move_to(double x, double y) {
+  void Point::moveTo(double x, double y) {
     this->x = x;
     this->y = y;
   }
@@ -356,7 +356,7 @@ A lot can be said about the code above, so let's start.
 
 In the example above, the name of the file is specified in comments. While some programmers do this, mostly it is a bad idea. It is a comment that may become misleading and stand in the way of change (changing the name of file if ever needed). Every decent editor will display the name of the file you are working in. It is only done here to make it more clear to you as a reader of this course.
 
-The first actual line of code is `#include "point.h"`, an include directive. It is necessary to include the class definition when defining the methods of that class.
+The first actual line of code is `#include "Point.h"`, an include directive. It is necessary to include the class definition when defining the methods of that class.
 
 Next the namespace is stated again. This is required as the actual method definition must also be placed inside of the namespace. Note again that after the closing curly brace of the namespace `{`, a semicolon `;` is required.
 
@@ -375,7 +375,7 @@ No access modifier needs to be specified here for the definition of the methods.
 Let us expand this example with methods that return the values of the coordinates. Since these methods do not change the state of the object and just return a part of it's state to the outside world, they are called **getter methods**.
 
 ```cpp
-// point.h
+// Point.h
 #pragma once
 
 namespace Geometry {
@@ -384,11 +384,11 @@ namespace Geometry {
 
     // Methods
     public:
-      void move_to(double x, double y);
+      void moveTo(double x, double y);
 
     public:
-      double get_x(void) const;
-      double get_y(void) const;
+      double getX(void) const;
+      double getY(void) const;
 
     // Attributes (instance variables)
     private:
@@ -403,27 +403,27 @@ namespace Geometry {
 Because these getter should not change the internal state of the object, it is a good idea to declare them as being `const`. A function or method becomes const when the `const` keyword is used in its declaration. The idea of const functions is not to allow them to modify the object on which they are called. It is recommended practice to make as many functions const as possible so that accidental changes to objects are avoided.
 
 ::: tip Getters
-Often getter methods are named with a prefix `get_`. This is however not mandatory. C++ does not allow methods to have the same name as attributes, otherwise the methods could been called `x` and `y` which would be preferred. That is why some developers name attributes starting with an `m` from member or `_` to differentiate between attributes and arguments or methods.
+Often getter methods are named with a prefix `get`. This is however not mandatory. C++ does not allow methods to have the same name as attributes, otherwise the methods could been called `x` and `y` which would be preferred. That is why some developers name attributes starting with an `m` from member or `_` to differentiate between attributes and arguments or methods.
 :::
 
 As a next step it is required to give the getter methods an implementation.
 
 ```cpp
-// point.cpp
-#include "point.h"
+// Point.cpp
+#include "Point.h"
 
 namespace Geometry {
 
-  void Point::move_to(double x, double y) {
+  void Point::moveTo(double x, double y) {
     this->x = x;
     this->y = y;
   }
 
-  double Point::get_x(void) const {
+  double Point::getX(void) const {
     return x;
   }
 
-  double Point::get_y(void) const {
+  double Point::getY(void) const {
     return y;
   }
 
@@ -448,7 +448,7 @@ Important to note is that you will need to include the header file that contains
 
 ```cpp
 #include <iostream>
-#include "point.h"
+#include "Point.h"
 
 using namespace std;
 
@@ -463,11 +463,11 @@ int main() {
 
 While this is pretty awesome, the code above doesn't do a lot. As stated before, an OOP application is a collection of objects that send messages to each other. These messages are actual requests made to the objects to show of their behavior. So in other words, we need to make method calls to the objects to make them perform actions.
 
-Let us change the x and y coordinates of the `center` `Point` using the `move_to` method and retrieve them back using the getter methods.
+Let us change the x and y coordinates of the `center` `Point` using the `moveTo` method and retrieve them back using the getter methods.
 
 ```cpp
 #include <iostream>
-#include "point.h"
+#include "Point.h"
 
 using namespace std;
 
@@ -476,10 +476,10 @@ int main() {
 
   Geometry::Point center;
 
-  center.move_to(12.5, 23);
+  center.moveTo(12.5, 23);
 
   cout << "The point is now at ["
-    << center.get_x() << ", " << center.get_y()
+    << center.getX() << ", " << center.getY()
     << "]" << endl;
 
   return 0;
@@ -516,10 +516,10 @@ Mark the exercises using a ✅ once they are finished.
 
 ### 1. Move by delta
 
-Extend the `Point` class with a method `move_by(double deltaX, double deltaY)` that allows the user of a `Point` object to move the point using delta-coordinates.
+Extend the `Point` class with a method `moveBy(double deltaX, double deltaY)` that allows the user of a `Point` object to move the point using delta-coordinates.
 
 ```cpp
-// point.h
+// Point.h
 #pragma once
 
 namespace Geometry {
@@ -528,7 +528,7 @@ namespace Geometry {
 
     // Methods
     public:
-      void move_to(double x, double y);
+      void moveTo(double x, double y);
 
     // Attributes (instance variables)
     private:
@@ -541,12 +541,12 @@ namespace Geometry {
 ```
 
 ```cpp
-// point.cpp
-#include "point.h"
+// Point.cpp
+#include "Point.h"
 
 namespace Geometry {
 
-  void Point::move_to(double x, double y) {
+  void Point::moveTo(double x, double y) {
     this->x = x;
     this->y = y;
   }
@@ -565,30 +565,30 @@ What would you expect to be the output of the following code? What happens when 
 // g++ main.cpp point.cpp -o points
 
 #include <iostream>
-#include "point.h"
+#include "Point.h"
 
 using namespace std;
 
 int main() {
   Geometry::Point first;
-  first.move_to(10, 20);
+  first.moveTo(10, 20);
   cout << "First is at ["
-    << first.get_x() << ", " << first.get_y() << "]" << endl;
+    << first.getX() << ", " << first.getY() << "]" << endl;
 
   // Initialize second point with first
   Geometry::Point second = first;
 
   cout << "Second is at ["
-    << second.get_x() << ", " << second.get_y() << "]" << endl;
+    << second.getX() << ", " << second.getY() << "]" << endl;
 
   cout << "Moving first point to 103, 1234" << endl;
-  first.move_to(103, 1234);
+  first.moveTo(103, 1234);
 
   cout << "First is at ["
-    << first.get_x() << ", " << first.get_y() << "]" << endl;
+    << first.getX() << ", " << first.getY() << "]" << endl;
 
   cout << "Second is at ["
-    << second.get_x() << ", " << second.get_y() << "]" << endl;
+    << second.getX() << ", " << second.getY() << "]" << endl;
 
   return 0;
 }
