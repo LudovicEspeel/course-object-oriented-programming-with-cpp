@@ -192,7 +192,7 @@ Let's for example take a `Television` class that contains two `PowerSupply` obje
 The header file of the `PowerSupply` looks like:
 
 ```cpp
-// power_supply.h
+// PowerSupply.h
 #pragma once
 
 class PowerSupply {
@@ -208,8 +208,8 @@ class PowerSupply {
 While the implementation is:
 
 ```cpp
-// power_supply.cpp
-#include "power_supply.h"
+// PowerSupply.cpp
+#include "PowerSupply.h"
 #include <iostream>
 
 PowerSupply::PowerSupply(double inputVoltage, double outputVoltage) {
@@ -224,9 +224,9 @@ PowerSupply::PowerSupply(double inputVoltage, double outputVoltage) {
 The class definition of the `Television` declares that it has two sub-objects of the type `PowerSupply`. One power supply for the embedded system and one for the LED display.
 
 ```cpp
-// television.h
+// Television.h
 #pragma once
-#include "power_supply.h"
+#include "PowerSupply.h"
 
 class Television {
   public:
@@ -255,7 +255,7 @@ Since the `PowerSupply` class has no default constructor, the `Television` class
 
 ```cpp{6}
 // television.cpp
-#include "television.h"
+#include "Television.h"
 #include <iostream>
 
 Television::Television(double inputVoltage)
@@ -272,7 +272,7 @@ A example program can be as simple as:
 
 ```cpp
 // main.cpp
-#include "television.h"
+#include "Television.h"
 
 int main() {
     Television samsungTv(220);
@@ -299,9 +299,9 @@ Let's apply all this knowledge on a class `LineSegment` that models a line from 
 The `LineSegment` can be composed of a start `Point` and an end `Point` as shown in the class definition:
 
 ```cpp
-// line_segment.h
+// LineSegment.h
 #pragma once
-#include "point.h"
+#include "Point.h"
 
 namespace Geometry {
 
@@ -312,8 +312,8 @@ namespace Geometry {
     LineSegment(Point start, Point end);
 
   public:
-    void set_start(Point start);
-    void set_end(Point end);
+    void setStart(Point start);
+    void setEnd(Point end);
 
   public:
     double length(void);
@@ -331,8 +331,8 @@ By adding multiple constructors, an object of `LineSegment` can be instantiated 
 A possible implementation for the `LineSegment` class could then be:
 
 ```cpp
-// line_segment.cpp
-#include "line_segment.h"
+// LineSegment.cpp
+#include "LineSegment.h"
 #include <cmath>    // for sqrt
 
 namespace Geometry {
@@ -352,23 +352,23 @@ namespace Geometry {
 
   LineSegment::LineSegment(Point start, Point end) {
     // Calling setters is cleanest here
-    set_start(start);
-    set_end(end);
+    setStart(start);
+    setEnd(end);
   }
 
-  void LineSegment::set_start(Point start) {
+  void LineSegment::setStart(Point start) {
     this->start = start;
   }
 
-  void LineSegment::set_end(Point end) {
+  void LineSegment::setEnd(Point end) {
     this->end = end;
   }
 
   double LineSegment::length(void) {
     return sqrt(
-      (start.get_x() - end.get_x()) * (start.get_x() - end.get_x())
+      (start.getX() - end.getX()) * (start.getX() - end.getX())
       +
-      (start.get_y() - end.get_y()) * (start.get_y() - end.get_y())
+      (start.getY() - end.getY()) * (start.getY() - end.getY())
     );
   }
 
@@ -379,7 +379,7 @@ with a small demo app being:
 
 ```cpp
 #include <iostream>
-#include "line_segment.h"
+#include "LineSegment.h"
 
 using namespace std;
 

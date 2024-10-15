@@ -22,7 +22,7 @@ class User {
     }
 
   public:
-    std::string get_name() {
+    std::string getName() {
       return name;
     }
 
@@ -43,7 +43,7 @@ struct User {
     }
 
   public:
-    std::string get_name() {
+    std::string getName() {
       return name;
     }
 
@@ -56,7 +56,7 @@ There is no difference for creating instances or calling members of either:
 
 ```cpp
 User user("Jef");
-std::cout << user.get_name() << std::endl;
+std::cout << user.getName() << std::endl;
 ```
 
 ## Use Cases
@@ -103,7 +103,7 @@ struct SearchMatch {
 Now the implementation for the function can be as simple as:
 
 ```cpp
-SearchMatch find_match(std::string text, std::string key) {
+SearchMatch findMatch(std::string text, std::string key) {
   SearchMatch match {
     "", "", ""
   };
@@ -124,7 +124,7 @@ A small demo app could be:
 ```cpp
 int main(int argc, char const *argv[])
 {
-  SearchMatch match = find_match("C:/users/nicod/projects/hello.txt", "users");
+  SearchMatch match = findMatch("C:/users/nicod/projects/hello.txt", "users");
 
   std::cout << "Before: " << match.before << std::endl;
   std::cout << "Match: " << match.match << std::endl;
@@ -137,7 +137,7 @@ int main(int argc, char const *argv[])
 Consider for example the alternative using an array of the three elements, which is only possible here because all three parts are of the same type, namely `std::string`. In this case the code would change to this:
 
 ```cpp
-std::string * find_match(std::string text, std::string key) {
+std::string * findMatch(std::string text, std::string key) {
   std::string * results = new std::string[3];
 
   std::size_t startPos = text.find(key);
@@ -152,7 +152,7 @@ std::string * find_match(std::string text, std::string key) {
 
 int main(int argc, char const *argv[])
 {
-  std::string * results = find_match("C:/users/jefd/projects/hello.txt", "users");
+  std::string * results = findMatch("C:/users/jefd/projects/hello.txt", "users");
 
   std::cout << "Before: " << results[0] << std::endl;
   std::cout << "Match: " << results[1] << std::endl;
@@ -163,4 +163,4 @@ int main(int argc, char const *argv[])
 }
 ```
 
-While a bit shorter, this code is a lot less readable. The indexes of the array have no real meaning. This approach is also very prone to errors and the code that is using the functionality of the function `find_match` is also responsible of deleting the dynamically allocated array of strings allocate by the `find_match` function.
+While a bit shorter, this code is a lot less readable. The indexes of the array have no real meaning. This approach is also very prone to errors and the code that is using the functionality of the function `findMatch` is also responsible of deleting the dynamically allocated array of strings allocate by the `findMatch` function.
