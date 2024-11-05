@@ -6,13 +6,13 @@ description: needs to be done
 
 Operators are elemental programming building block which are found at the heart of every C++ statement. Operators are a symbolic representation of a single, simple task that needs to be performed by the computer. Most are based on familiar concepts and are therefore easily understood. Others are associated with more complex concepts and are therefore covered in future chapters.
 
-::: insight Key Insight - Operator
+::: insight Key insight - Operator
 Operators are a symbolic representation of a single, simple task that needs to be performed by the computer.
 :::
 
 Operators perform their action on or with **operands**, be it expressions or values.
 
-::: insight Key Insight - Expression and Statement
+::: insight Key insight - Expression and statement
 An expression is "a sequence of operators and operands that specifies a computation" (that's the definition given in the C++ standard). Examples are `x`, `x + 5`, and `round(12.44)`. Even an assignment `x = 5` is an expression in C++. That's why the following is valid in C++: `x = y = b + 3`
 
 The rule is that an expression must result into a single value.
@@ -22,7 +22,7 @@ A statement is a chunk of code that performs an action and is terminated by a se
 So basically `x = y + 3;` is a statement that consists of the three expressions `y`, `y + 3` and `x = y + 3`.
 :::
 
-## Arithmetic Operators
+## Arithmetic operators
 
 The most basic operators are the Arithmetic operators. They are easy to understand because they have the same functionality as in math. The following operators are available to do basic math operations:
 
@@ -103,7 +103,7 @@ Operators that have the same precedence are bound to their arguments in the dire
 
 <YoutubeVideo videoId="THiWb_5N73g" />
 
-### Increment and Decrement Operators
+### Increment and decrement operators
 
 Incrementing (+1) and decrementing (-1) a variable is done very often in a programming language. It is one of the most used operations on integral values. It is most common used in loop-constructs as will become clear in the next chapters.
 
@@ -134,7 +134,7 @@ int b = i++;  // b = 5, i = 6
 
 While this may not seem all that important at the moment, it will be when arrays and loop-constructs are introduced.
 
-## Comparison Operators
+## Comparison operators
 
 Comparison (aka relational) operators are used to **compare two values** with each other.
 
@@ -169,7 +169,7 @@ Note how two equality signs `==` are required to test if two values are equal, w
 
 While the comparison operators will not often be used in a situation as shown in the previous code, they will often be used to make decisions in code.
 
-## Logical Operators
+## Logical operators
 
 More complex conditional expressions can be created by combining multiple conditional expressions. This can be achieved by using the logical operators.
 
@@ -192,7 +192,7 @@ bool isAnAdolescent = (age > 14 && age < 18);   // true
 bool isAnAdult = (age >= 18 && age <= 75);      // false
 ```
 
-### Lazy Evaluation
+### Lazy evaluation
 
 The logical operators exhibit **"short-circuiting"** behavior, which means that the second operand is evaluated only if needed. This is also called **lazy evaluation**. So for example in an OR statement, if the first operand evaluates to `true` the outcome must also be `true`. For this reason the second operand is not checked anymore.
 
@@ -232,11 +232,11 @@ Result: 0
 
 Do note that in the last example the postfix operator is used and not the prefix operator. Meaning that the value of `counter` is evaluated before it is incremented. As its initial value was `0` it is evaluated to `false`, meaning that `result` is assigned `false`.
 
-## The Conditional Operator
+## The conditional operator
 
 The conditional operator returns one of two values depending on the result of an expression. The returned value can then be used in another expression or assigned to a variable for later use.
 
-![The Conditional Operator](./img/conditional-operator.png)
+![The conditional operator](./img/conditional-operator.png)
 
 Its syntax is as follows:
 
@@ -261,11 +261,11 @@ While it is possible to nest the ternary operator, it is strongly discouraged as
 
 <YoutubeVideo videoId="ezqsL-st8qg" />
 
-## BitWise Operators
+## Bitwise operators
 
 Bitwise operators **work on bits** and perform bit-by-bit operations.
 
-### Boolean Operators
+### Boolean operators
 
 The next table shows an overview of the boolean operators supported by C++.
 
@@ -290,7 +290,7 @@ unsigned char z = a ^ b;    // 0b1010'0101
 unsigned char w = ~b;       // 0b1111'0000
 ```
 
-### Shift Operators
+### Shift operators
 
 The shift operators bitwise shift the value off their left operand by the number of bits given as their right operand.
 
@@ -329,7 +329,7 @@ If the number is shifted more than the size of integer, the behavior is also und
 
 <!-- Apparently shift operators are a mess for for negative numbers (https://en.cppreference.com/w/cpp/language/operator_arithmetic#Bitwise_shift_operators) -->
 
-### Assignment Operators
+### Assignment operators
 
 Next to the basic assignment operator `=`, C++ also supports a whole collection of **compound** assignment operators.
 
@@ -361,7 +361,7 @@ x /= 4;   // Same as writing x = x / 4;
 x %= 4;   // Same as writing x = x % 4;
 ```
 
-## The `sizeof` Operator
+## The `sizeof` operator
 
 `sizeof` is a **compile-time operator** (not run-time) that determines the size, in bytes, of a variable or data type. Basically it tells you how much memory is required to store a a value of the given datatype. It can be used to get the size of classes, structures, unions, arrays and any other user defined data type.
 
@@ -393,21 +393,21 @@ Size of a long long: 8 bytes.
 Remember that the size of the datatypes can differ on your system as C++ does not enforce an exact size for each datatype.
 :::
 
-## Number of Operands
+## Number of operands
 
 Operators can also be categorized depending on the number of operands they take.
 
-* **Unary Operators**: Unary operators only require a single operand. The most common example is the minus-operators, which changes the sign of the value provided as the operand. For example: `-3`.
+* **Unary operators**: Unary operators only require a single operand. The most common example is the minus-operators, which changes the sign of the value provided as the operand. For example: `-3`.
 
-* **Binary Operators**: Binary operators require two operands to perform their operation. The arithmetic operators are the most familiar examples of binary operators. For example: `health + 15`, where the operator is `+`, and `health` and `15` are the operands.
+* **Binary operators**: Binary operators require two operands to perform their operation. The arithmetic operators are the most familiar examples of binary operators. For example: `health + 15`, where the operator is `+`, and `health` and `15` are the operands.
 
-* **Ternary Operator**: The C++ language has only a single ternary operator, namely the conditional operator `?:`, often also called THE ternary operator. Ex. `(age > 18 ? "Adult" : "Non-Adult"). The result of this ternary operator can then be assigned to a variable or used somewhere else in code.
+* **Ternary operator**: The C++ language has only a single ternary operator, namely the conditional operator `?:`, often also called THE ternary operator. Ex. `(age > 18 ? "Adult" : "Non-Adult"). The result of this ternary operator can then be assigned to a variable or used somewhere else in code.
 
-## List of C++ Operators
+## List of C++ operators
 
 While not all operators are discussed in this chapter, here is a list of the most common C++ operators, their precedence and associativity. Operators with the highest precedence appear at the top of the table, those with the lowest appear at the bottom. Within an expression, higher precedence operators will be evaluated first.
 
-![List of C++ Operators - Source: https://www.tutorialspoint.com/cplusplus/cpp_operators.htm](./img/list_of_operators.png)
+![List of C++ operators - Source: https://www.tutorialspoint.com/cplusplus/cpp_operators.htm](./img/list_of_operators.png)
 
 By the end of this course all these operators should be clear to you.
 
@@ -435,7 +435,7 @@ int hours = 25;
 // How can we limit hours here so it wraps around to 1?
 ```
 
-### 3. Incrementing an Expression
+### 3. Incrementing an expression
 
 *Knowing what you know now, could you answer the following question? Would it be possible to use the increment operator on an expression as demonstrated in the following code snippet?*
 

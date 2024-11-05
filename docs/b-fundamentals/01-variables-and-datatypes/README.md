@@ -2,25 +2,25 @@
 description: Variables allow access to data stored in computer memory
 ---
 
-# Variables and Data Types
+# Variables and data types
 
 The main task of almost any application is processing and transforming data. To accomplish this tasks, it needs to store all sorts of information. From basic data such as numbers, characters and strings to complex data types that the programmer can define for himself.
 
 This data is read, stored, manipulated and outputted throughout the application. The **data itself is stored inside the memory of the computer** or system the program is running on. Inside the application one does not need to access the memory directly, for this the developer can make use of variables.
 
-::: insight Key Insight - Processing Data
-Applications are collections of instructions that manipulate and process data to produce a required result.
+::: insight Key insight - Processing data
+applications are collections of instructions that manipulate and process data to produce a required result.
 :::
 
-## What are Variables
+## What are variables?
 
 Computer memory can be thought of as a huge cabinet with millions of small drawers. The content of the drawers is the information stored in memory that is used inside the application. While it is perfectly possible to refer to a drawer using its location, for example `145`, it is a lot harder to remember and not practical to work with. There is also no link between the location and the actual content of the drawer.
 
-![Memory of a Computer](./img/drawers_memory.png)
+![Memory of a computer](./img/drawers_memory.png)
 
 Now if one could place a label on the drawer that is descriptive enough of its content, it would be much easier to refer to the drawer using the descriptive name (for example `count`, `age`, `name`). This is analogous with a **variable name, a symbolic label for a location in memory**.
 
-## Creating Variables
+## Creating variables
 
 **C++ is a strongly-typed language**, and requires every variable to be defined with its **datatype** before its first use.
 
@@ -31,7 +31,7 @@ Defining a variable informs the compiler of
 * how to **interpret** its value
 * what **operations** can be applied to the variable
 
-::: insight Key Insight - A Variable
+::: insight Key insight - A variable
 A variable is a symbolic label for a location in memory where data is stored. A variable has a name (identifier) and a data type. The data type of the variables determines which operations can be performed on the data and how the value in memory has to be interpreted.
 :::
 
@@ -49,7 +49,7 @@ int numberOfStudents;
 
 When the application is run (at runtime), this variable will be **instantiated** (created) and actual **memory space will be reserved** to store the data.
 
-::: insight Key Insight - Declaration versus definition
+::: insight Key insight - Declaration versus definition
 Note that defining a variable is not the same as declaring it. Declaring a variable is stating that it exists somewhere, while defining a variable is actually creating it. Declaring a variable is done using the `extern` keyword. While less important for variables, the distinction will be more clear in the context of functions, methods and classes.
 :::
 
@@ -59,11 +59,11 @@ While consider bad practice, multiple variables of the same type can also be def
 int x, y, z;
 ```
 
-::: warning Warning - Defining Multiple Variables
+::: warning Warning - Defining multiple variables
 Define each variable using its own statement. Using a single statement to define multiple variables is bad practice and can introduce hard-to-track bugs when using pointers as will be seen later in this course.
 :::
 
-## Naming Variables
+## Naming variables
 
 The name of a variable can be composed of letters, digits, and the underscore character. It must begin with either a letter or an underscore, not with a digit. Upper and lowercase letters are distinct because **C++ is case-sensitive**. A variable name can also not be a language keyword. For example, `int` is a keyword that is used to denote integers.
 
@@ -79,7 +79,7 @@ Some good examples are:
 
 **Don't abbreviate variable names** or parts of variable names. These days code completion helps us to complete longer variables names with the hit of a button.
 
-## The Assignment Operator
+## The assignment operator
 
 The assignment operator is probable one of the most used operators in C++. It allows one to assign a value to a variable. The assignment operator takes two operands. The left side, called the left operand, which refers to the variable being assigned and the right hand side representing the value that is assigned to the left operand.
 
@@ -104,7 +104,7 @@ y = x;    // Copy value of x to y
 
 The last statement assigns the value of the variable `x` to the variable `y`. Consider also that we are only assigning **the value** of `x` to `y` at the moment of the assignment operation. Therefore, if `x` changes at a later moment, it will not affect the value held by `y`. In other words a copy is made of the value held by `x` and then stored in `y`.
 
-## Variable Initialization
+## Variable initialization
 
 When defining a variable, one can immediately assign a value to it. This process is called **initializing the variable**.
 
@@ -122,7 +122,7 @@ numberOfStudents = 14;
 
 When a value like `14`, `-123` or even a string like `"Hello World"` is used inside code, it is called a **literal value** or even shorter a **literal**.
 
-## Accessing the Variable
+## Accessing the variable
 
 Accessing or using a variable is as simple as stating its name where it's value is expected to be used.
 
@@ -134,7 +134,7 @@ int numberOfStudents = 35;
 cout << numberOfStudents << endl;
 ```
 
-## Primitive Data Types
+## Primitive data types
 
 **Primitive types** are the **most basic data types available** within a programming language. These types serve as the building blocks of data manipulation. Such types serve only one purpose - containing pure, simple values of a certain type.
 
@@ -144,7 +144,7 @@ C++ supports several primitive datatypes as shown in the following tables.
 
 **Character types**
 
-| Type | Size / precision | Literal Example(s) |
+| Type | Size / precision | Literal example(s) |
 | :---: | --- | --- |
 | `char` | At least 8 bits. | `'a'`, `'4'`, `'\n'` |
 | `char16_t` | At least 16 bits. Not smaller dan `char`. | `'Ā'` (U+0100 or 256) |
@@ -153,7 +153,7 @@ C++ supports several primitive datatypes as shown in the following tables.
 
 **Signed types**
 
-| Type | Size / precision | Literal Example(s) |
+| Type | Size / precision | Literal example(s) |
 | :---: | --- | --- |
 | `short`, `short int` | At least 16 bits. Not smaller than `char`. | `123`, `-666` |
 | `int` | At least 16 bits. Not smaller than `short`. | `-22`, `42` |
@@ -162,7 +162,7 @@ C++ supports several primitive datatypes as shown in the following tables.
 
 **Unsigned types**
 
-| Type | Size / precision | Literal Example(s) |
+| Type | Size / precision | Literal example(s) |
 | :---: | --- | --- |
 | `unsigned char` | Same size as `char`. | `55` |
 | `unsigned short` | Same size as `short`. | `12`, `43` |
@@ -170,9 +170,9 @@ C++ supports several primitive datatypes as shown in the following tables.
 | `unsigned long` | Same size as `long`. | `55L` |
 | `unsigned long long` | Same size as `long long`. | `5000000LL`, `123'456'789LL` |
 
-**Floating Point types**
+**Floating point types**
 
-| Type | Size / precision | Literal Example(s) |
+| Type | Size / precision | Literal example(s) |
 | :---: | --- | --- |
 | `float` | Single precision floating point numbers. | `123.456f` |
 | `double` | Double precision floating point numbers. Precision not less than `float`. | `3.14`, `6.02e12` |
@@ -180,7 +180,7 @@ C++ supports several primitive datatypes as shown in the following tables.
 
 **Boolean types**
 
-| Type | Size / precision | Literal Example(s) |
+| Type | Size / precision | Literal example(s) |
 | :---: | --- | --- |
 | `bool` | | `true`, `false` |
 
@@ -194,14 +194,14 @@ Within each of the groups above, the difference between types is only their size
 
 Type sizes above are expressed in bits. The more bits a type has, the more distinct values it can represent. On the other hand, the larger the size, the more memory a datatype consumes.
 
-| Number of Bits (size) | Unique Representable Values | Unsigned | Signed |
+| Number of bits (size) | Unique representable values | Unsigned | Signed |
 | --- | --- | --- | --- |
 | 8-bit | 2^8 = 256 | 0 to 255 | -128 to 127 |
 | 16-bit | 2^16 = 65'536 | 0 to 65'535 | -32'768 to 32'767 |
 | 32-bit | 2^32 = 4'294'967'296 | 0 to 4'294'967'295 | -2'147'483'648 to 2'147'483'647 |
 | 64-bit | 2^32 = 18'446'744'073'709'551'616 | 0 to 18'446'744'073'709'551'615 | -9'223'372'036'854'775'808 to 9'223'372'036'854'775'807 |
 
-::: tip Tip - Octal, Hexadecimal and Binary
+::: tip Tip - Octal, hexadecimal and binary
 C++ also supports integer literal written in a different base notation, for example:
 
 * Hexadecimal format by prefixing the literal with `0x`, for example `0xFF` for `255`.
@@ -209,7 +209,7 @@ C++ also supports integer literal written in a different base notation, for exam
 * Binary format by prefixing the literal with `0b`, for example `0b11111111` for `255`. You can also use single quotes `'` as a nibble separator: `0b1111'1111`.
 :::
 
-### Character Types
+### Character types
 
 These can represent a single character, such as `'A'` or `'$'`. The most basic type is `char`, representing a single character. Other types are also provided for wider characters.
 
@@ -237,9 +237,9 @@ More info on character sets and encoding: [https://www.smashingmagazine.com/2012
 
 Note the difference between text (strings) and single characters. Strings are placed between double quotes `"Hello World"`, while single characters are enclosed between single quotes `'x'`.
 
-### Numerical Integer types
+### Numerical integer types
 
-Numerical Integer types can store a whole number value, such as `7` or `1024`. They exist in a variety of sizes, and can either be `signed` or `unsigned`, depending on whether they support negative values or not.
+Numerical integer types can store a whole number value, such as `7` or `1024`. They exist in a variety of sizes, and can either be `signed` or `unsigned`, depending on whether they support negative values or not.
 
 ```cpp
 unsigned int sum;   // Definition
@@ -282,7 +282,7 @@ Here is an approximation of pi: 3.1415
 </pre>
 :::
 
-### The Boolean type
+### The boolean type
 
 The boolean type, known in C++ as `bool`, can only represent one of two states, `true` or `false`.
 
@@ -352,7 +352,7 @@ These fast and least types are guaranteed to be defined, and are safe to use. Bo
 | `int_least32_t` | Smallest signed integer type with width of at least 32 bits |
 | `int_least64_t` | Smallest signed integer type with width of at least 64 bits |
 
-### Best Practices for Integers
+### Best practices for integers
 
 Now what types should one use for defining integral values.
 
@@ -403,11 +403,11 @@ Both C and C++ define the values as undefined. Undefined means it may be **anyth
 
 So important lesson: **Make sure to assign a meaningful value to variables before using them as they may lead to hard-to-track bugs inside your application.**
 
-## Preprocessor Define
+## Preprocessor define
 
 Preprocessor directives are lines included in the code of programs preceded by a hash sign `#`. These lines are not program statements but directives for the preprocessor. The preprocessor examines the code before actual compilation of code begins and resolves all these directives before any code is actually generated by regular statements.
 
-::: insight Key Insight - Preprocessor Directive
+::: insight Key insight - Preprocessor Directive
 A preprocessor directive begins with hashtag `#`. It is processed before compiling the program. A preprocessor directive is not a statement and is therefore also not terminated by a semicolon `;`.
 :::
 
@@ -476,7 +476,7 @@ A named constant defines an actual variable in the language, which you can use l
 
 Try to solve the exercises yourself. Don't go copy pasting other people's solutions.
 
-### 1. Data vs Information
+### 1. Data vs. information
 
 *What is the difference between data and information? Give an example.*
 
@@ -488,7 +488,7 @@ Try to solve the exercises yourself. Don't go copy pasting other people's soluti
 
 *How would you define a variable to store the age of a person in? Make sure to give it an appropriate name. Explain why you choose that exact data type.*
 
-### 4. Multiple Variable Definitions
+### 4. Multiple variable definitions
 
 *Rewrite the following code snippet so each variable is defined separately.*
 
@@ -530,7 +530,7 @@ cout << "b = " << b << endl;
 cout << "c = " << c << endl;
 ```
 
-### 8. Refactoring Defines
+### 8. Refactoring defines
 
 *Refactor the code snippet below that makes use of a `define` statement where a constant could have been used. Don't mind the arithmetics for now.*
 
@@ -542,7 +542,7 @@ double radius = 12.5;
 double circleArea = PI * radius * radius;
 ```
 
-### 9. Magic Numbers have no Meaning
+### 9. Magic numbers have no meaning
 
 *The following code snippet calculates the total invoice amount that has to be paid. The calculation of the total amount contains a magic number. Can you fix it?*
 

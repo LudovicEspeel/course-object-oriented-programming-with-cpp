@@ -30,13 +30,13 @@ Both approaches are important cornerstones of an object oriented programming lan
 
 Consider a first example that is being build for an online computer web shop. A beginning developer has modeled some of the items that his client wants to sell online. However he has come to the conclusion that his design needs to be refactored. Below is a partial UML class diagram of the classes modeled without the use of inheritance. Each class has the full functionality implemented into the class itself.
 
-![Computer Store without Inheritance](./img/computer_store_without_inheritance.png)
+![Computer store without inheritance](./img/computer_store_without_inheritance.png)
 
 While they are not documented in the UML, the attributes can have getters and setters.
 
 In a first iteration of the refactoring process, the most common attributes are extracted to a base class to have a cleaner design. A good name might be `Product`. Since it is a store that sells products, it seems a logical choice. When selecting attributes from the derived classes to be placed inside `Product`, we must ask our self the question if that attribute is a logical property of computer store product. If not, then something is wrong or our models are wrong.
 
-![Computer Store with Inheritance](./img/computer_store_with_inheritance.png)
+![Computer store with inheritance](./img/computer_store_with_inheritance.png)
 
 ::: tip Inheritance in UML class diagram
 In a UML class diagram inheritance is depicted using a solid line and a hollow arrow attached at the side of the base class.
@@ -185,7 +185,7 @@ The version of a method that is executed will be determined by the object that i
 
 The ability of a derived class to override a method allows a class to inherit from a base class whose behavior is "close enough" and then to modify behavior as needed.
 
-![Method Overriding](./img/shapes_method_overriding.png)
+![Method overriding](./img/shapes_method_overriding.png)
 
 The UML diagram above shows a couple of examples of method overriding. First of all there is the `draw()` method that is defined for the `Shape` class and its descendants. It takes no arguments and has no return value. Next there are the `getArea()` and `getCircumference()` methods which do return a `double`. Last is the `doesContain()` method which checks if the `Shape` contains a `Point`. It takes an argument and returns a value. Important to note is that the **signature** of all these methods are the same!
 

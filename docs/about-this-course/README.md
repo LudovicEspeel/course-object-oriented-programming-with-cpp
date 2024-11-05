@@ -42,7 +42,7 @@ There may be occasions for tests but these will mostly be announced.
 
 For the exact details on the LABs, exams and tests you should take a look at the [ECTS fiche of this course](http://onderwijsaanbod.vives-noord.be/syllabi/n/B3N120N.htm).
 
-## Course Objectives
+## Course objectives
 
 Below is a quick overview of the objectives of this course. By the end of the semester you should be able to check each of these of and consider them to be part of your programming skillset.
 

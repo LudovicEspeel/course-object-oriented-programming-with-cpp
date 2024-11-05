@@ -7,7 +7,7 @@ title: Guide - Linked List
 
 Like arrays, linked lists allow the **storage of data elements** of any data type in an sequential manner. Unlike arrays, the elements of a linked list are **not stored at contiguous locations in memory**, the **elements are linked one after another using pointers**.
 
-![Linked List Concept](./img/linked-list-concept.png)
+![Linked list concept](./img/linked-list-concept.png)
 
 ::: tip Definition
 A **linked list** is a dynamically allocated **linear data structure** that chains together **nodes** by **linking** from one node to another using pointers.
@@ -19,7 +19,7 @@ The datatype of the elements of both arrays and linked lists is not important si
 
 A linked list is a **linear data structure** where each element, called a **node**, is a separate object. In contrary to arrays, the nodes are **not stored at contiguous location**, because they are dynamically allocated as needed. The nodes of the linked lists are linked using pointers.
 
-![Representation of a Linked List](./img/linear-data-structure.png)
+![Representation of a linked list](./img/linear-data-structure.png)
 
 Each node of a list is made up of two items - the **data** and a **link to the next node**. The end of the list is denoted by making the last node point to `null`. The **entry point** into a linked list is called the **head of the list**. Important to understand is that  head is not a separate node, but the pointer to the first node. If the list is empty then the head contains the `null` value.
 
@@ -64,7 +64,7 @@ Let us create a basic implementation of a linked list where we store characters 
 
 Allowing a `Node` object to store data of type `char` and point to the `next` element will require the basic interface shown in the next UML diagram. A getter and setter method are provided for the `next` node. This will allow the nodes to be reorganized in the actual list as will be required for adding or removing elements in the actual linked list.
 
-![UML Diagram of Basic Node Class](./img/uml-basic-node.png)
+![UML diagram of basic Node class](./img/uml-basic-node.png)
 
 This leads to the following header file in C++:
 
@@ -139,7 +139,7 @@ Most of this code is pretty straight-forward. Maybe a small note is required on 
 
 If you hover over one of the string literals, VSCode will tell you what the type is:
 
-![C-Style Null-Terminated Character Arrays](./img/c-style-strings.png)
+![C-Style null-terminated character arrays](./img/c-style-strings.png)
 
 Notice that the array is 1 element bigger than the actual number of characters. That is because the string is terminated using a null-termination character `\0`. This occupies an extra space at the end of the array. This element allows C and C++ to detect the end of the string.
 

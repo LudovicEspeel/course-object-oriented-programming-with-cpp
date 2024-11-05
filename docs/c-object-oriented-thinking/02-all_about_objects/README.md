@@ -28,7 +28,7 @@ Basically one can state that something is an object if:
 
 If you are reading this in a classroom, then take a look around you. Try to focus on a person in the room. She/he is the perfect example of an object. First of all he/she has a name which uniquely identifies this person.
 
-![Characteristics of a Person](./img/person_cartoon.jpg)
+![Characteristics of a person](./img/person_cartoon.jpg)
 
 Now try to identify some characteristics of this person. Some examples could be his/her:
 
@@ -46,7 +46,7 @@ Each object holds its own state. This means that you can have a person in the cl
 
 ### Object Behavior
 
-![Behavior of a Person](./img/person_methods.jpg)
+![Behavior of a person](./img/person_methods.jpg)
 
 Take another look at someone in the classroom. What actions can a person perform ? He/she can:
 
@@ -116,13 +116,13 @@ Now the user is able to select what operation to perform on the list of numbers:
 
 Taking the structured programming approach the data and operations would be totally separate from each other as demonstrated in the diagram below.
 
-![Structured Programming Approach](./img/structured_programming_array.png)
+![Structured programming approach](./img/structured_programming_array.png)
 
 As can be seen above, all data required for the operations need to be passed to the functions or they need to be made globally available which is even worse.
 
 Now taking the object oriented approach a nice independent entity called `ListOfNumbers` can be engineered. It holds both the integers and the number of elements internally. Several actions can be requested from such an object such as `sort()`, `reverse()`, `print()`, ... Take note that the data does not need to be passed to the actions as they already have access to it as the internal state of the object.
 
-![Object Oriented Approach](./img/oop_list_of_numbers.png)
+![Object Oriented approach](./img/oop_list_of_numbers.png)
 
 While not only cleaner, more logical and maintainable, the object oriented approach also provides us with a lot more options for reusing code.
 
@@ -148,11 +148,11 @@ The dough we use is basically the computer memory we have at our disposal.
 
 The template for our cookie is the class.
 
-![Cookie Template - Class](./img/template.jpg)
+![Cookie template - Class](./img/template.jpg)
 
 The resulting cookies are the instances of the class called objects.
 
-![Baked Cookies - Object instances](./img/cookies.jpg)
+![Baked cookies - Object instances](./img/cookies.jpg)
 
 When we create objects we instantiate totally distinct instances of a class. **Each object contains its own copy of the data**. This means that if you change the data of one object, it will not affect the data of another object; at least not for primitive data types as we will see later on.
 
@@ -216,11 +216,11 @@ The life cycle of an object is the time between an object's creation and its des
 
 Let's take an example of relationship between Teacher and Student. Multiple students can associate with a single teacher and a single student can associate with multiple teachers. But there is no ownership between the objects and both have their own lifecycle. Both can be created and deleted independently.
 
-![Teacher has an Association with Student](./img/association.png)
+![Teacher has an association with student](./img/association.png)
 
 Another example could be an Employee who uses instances of the class Company Computer. While the computer objects are owned by the employee's company, he can make use of them.
 
-![Employee uses a Company Computer](./img/employee_computer.png)
+![Employee uses a company computer](./img/employee_computer.png)
 
 ### Composition
 
@@ -236,7 +236,7 @@ So composition implies a relationship where the child cannot exist independent o
 
 Take for example an object of class Person that is composed of other objects such as a head, two feet, a heart, ... If the person is destroyed his/her limbs and organs also die. This of course does not take into account organ transplantation.
 
-![Person as a Composition](./img/person_composition.png)
+![Person as a composition](./img/person_composition.png)
 
 ### Aggregation
 
@@ -250,7 +250,7 @@ Let's take an example of a relationship between Department and Teacher. A Teache
 
 Take for example a Car. If the parts of the car can be reused after the car is destroyed, then we can create a Car as an aggregation of Wheels, an Engine, a Radio, ...
 
-![Car as an Aggregation](./img/car_aggregation.png)
+![Car as an aggregation](./img/car_aggregation.png)
 
 ### Summarized
 

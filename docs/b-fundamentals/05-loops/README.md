@@ -14,7 +14,7 @@ Programming languages provide various structures that allow you to loop a block 
 * a **while loop**: Repeats a code block while a given condition is true. It tests the condition before executing the body of the loop, meaning that it may never execute if the condition is not satisfied from the beginning.
 * a **do-while loop**: Like a while loop, except that it tests the condition at the end of the loop body. This effectively means that the body of the loop will execute at least once.
 
-::: insight Key Insight - Iteration
+::: insight Key insight - Iteration
 A single execution of the loop body is called an iteration.
 :::
 

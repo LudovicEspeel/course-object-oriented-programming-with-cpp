@@ -2,13 +2,13 @@
 description: Dynamic memory allocation allows our application to request memory on the fly.
 ---
 
-# Dynamic Memory Allocation
+# Dynamic memory allocation
 
 Basically when executing an application on any machine - be it a server, a desktop or an embedded system - the application requires at least a processing unit (CPU) and memory.
 
 C++ will store data in different places based on how and where in code they were created. The programmer is given the choice based on efficiency and necessity. For maximum runtime speed, the storage and lifetime can be determined by the programmer while the program is being written.
 
-## Memory Segments
+## Memory segments
 
 The memory that is a assigned to an application when it is being run is typically divided in different regions called memory segments:
 
@@ -18,11 +18,11 @@ The memory that is a assigned to an application when it is being run is typicall
 * The **heap** is used to provide memory at runtime when the application requests dynamically allocated memory.
 * The **stack**, tracks function arguments, local variables and other function-related information.
 
-![Memory Regions](./img/memory-regions.png)
+![Memory regions](./img/memory-regions.png)
 
 For the moment the two most important regions for this course are the **stack** and **heap** segments.
 
-## The Stack
+## The stack
 
 The stack, often called the *call stack*, is a memory region  implemented as a stack structure (hence the name). It has quitte a big role to play when executing an application on a system. It keeps track of
 
@@ -31,7 +31,7 @@ The stack, often called the *call stack*, is a memory region  implemented as a s
 * all **function parameters** that are required upon calling the function
 * all **local variables** of the functions
 
-### Calling a Function
+### Calling a function
 
 <!-- Maybe place diagram here later on? -->
 
@@ -48,7 +48,7 @@ At a certain point in time the function should terminate, which again consists o
 3. Next the return value is handled. Depending on the computer's architecture, the function's return value is placed inside a processor register or placed on the stack. If the value of the function isn’t assigned to anything, no assignment takes place, and the value is lost.
 4. Last the return address of the next instruction to execute is popped off the stack, and the CPU resumes execution at that instruction.
 
-### Variables on the Stack
+### Variables on the stack
 
 All the variables, arguments and objects shown in the next code sample are placed on the stack.
 
@@ -81,7 +81,7 @@ The stack memory is a fixed size memory region that is allocated before the prog
 
 It does however require you to know the exact quantity, lifetime and type of the objects when you are writing the program. Besides that the **stack is also limited in size**. This means that you **can overflow** the stack, especially on smaller embedded systems this can be a limiting factor.
 
-### Stack Overflow
+### Stack overflow
 
 The stack and heap sizes are determined by the operating system on which the application is being run. The stack and heap memory are not included in the binary stored on disk. When a process is loaded in memory then the stack and heap segments are allocated for that process.
 
@@ -147,7 +147,7 @@ Current iteration: 261798
 Running this example on Linux will give a segmentation fault error, in Windows, you'll see no error message.
 While this is not a realistic example, it does show that their is a limit to how deep functions can be nested. This limit only decreases as functions take more stack space. This can become problematic quite fast on embedded systems with limited memory.
 
-## The Heap
+## The heap
 
 The heap segment - also knows as the "free store" - is a memory region used for allocating dynamic memory at runtime. Dynamic memory allocation is a way for application to request memory from the operating system at runtime.
 
@@ -161,7 +161,7 @@ Looking back at heap memory it seems that it only has disadvantages. However the
 
 If you don't know how many objects you will need until runtime, what their lifetime is or what their exact type is, you will need to allocate your objects on the heap.
 
-### When to use the heap
+### When to use the heap?
 
 If we have to declare the size of everything at compile time, the best we can do is try to make a guess the maximum size of variables we’ll need and hope that’s enough:
 
@@ -181,7 +181,7 @@ There are some reasons why this is not the best solution:
 
 On top of this, it is also inefficient to pass large and complex objects declared on the stack to functions. They will be passed by value and therefore be copied into a new variable on the stack, taking space everytime they are passed to a function.
 
-## Stack versus Heap
+## Stack versus heap
 
 Declaring variables on the stack has both advantages and disadvantages:
 
@@ -197,7 +197,7 @@ Also requesting memory from the heap has some advantages and disadvatages:
 * ❌ Dynamically allocated memory is handled via pointers. Dereferencing pointers is a relative slower process compared to using variables on the stack.
 * ✔️ The heap is a big memory pool that allows us to allocate large blocks of memory for more complex objects, large arrays and such.
 
-## Dynamically Allocating Memory in C++
+## Dynamically allocating memory in C++
 
 Allocating memory on the heap in C++ is accomplished using the `new` operator which returns a pointer to the newly allocated block of memory.
 
@@ -209,7 +209,7 @@ As mentioned before, it is critical that the memory be freed when it is not need
 A memory leak is created when memory is allocated but not released causing an application to consume memory reducing the available memory for other applications and eventually causing the system to page virtual memory to the hard drive slowing the application or crashing the application when the computer memory resource limits are reached. The system may stop working as these limits are approached.
 :::
 
-### Allocating Primitive Data Types
+### Allocating primitive data types
 
 Take a basic example that request an integer to be allocated on the heap. It uses the integer to store a value and output it to the standard output. The memory is freed after usage.
 
@@ -237,7 +237,7 @@ int main(void) {
 The `delete` operator does not actually delete anything. It simply returns the memory being pointed to back to the operating system. The operating system is then free to reassign that memory to another application (or to this application again later). Although it looks like a variable is being deleted, this is not the case. The pointer variable itself still has the same scope as before, and can be assigned a new value just like any other variable. In other words the pointer variable itself actually resides on the stack, while the memory it pointed too was allocated on the heap.
 :::
 
-### Creating and Destroying Objects on the Heap
+### Creating and destroying objects on the heap
 
 Another important difference between dynamic and automatic allocation is the fact that the compiler can automatically destroy objects that were created on the stack. This because the exact lifetime of those objects is known. This is not the case for objects that are created on the heap; the compiler has no knowledge of their lifetime. In C++ this is the responsibility of the programmer. If done incorrectly or not at all, the application will contain memory leaks.
 
@@ -287,7 +287,7 @@ Foo::~Foo(void) {
 }
 ```
 
-### Creating and Destroying arrays on the heap
+### Creating and destroying arrays on the heap
 
 To dynamically allocate an array one needs to use the `new[]` operator. To free the memory, the `delete[]` keyword is required.
 
@@ -313,7 +313,7 @@ int main(void) {
 }
 ```
 
-## An RGB Led Class
+## An RGBLed class
 
 Let's take a look at a more complete example where all these things come together.
 
@@ -324,6 +324,7 @@ The implementation of the `Color` class can be found [here](README2.md).
 :::
 
 ```cpp
+// RgbLed.h
 #pragma once
 
 #include "Color.h"
@@ -360,6 +361,7 @@ Note that the `RgbLed` class has two constructors (constructor overloading):
 The implementation that belongs to the previous header file is shown below.
 
 ```cpp
+// RgbLed.cpp
 #include "RgbLed.h"
 
 using namespace Visual;
@@ -411,6 +413,7 @@ In other words, the default constructor here first calls the other constructor w
 Let's take a look at a usage example where we create an object on the stack.
 
 ```cpp
+// main.cpp
 #include <iostream>
 #include "RgbLed.h"
 
@@ -434,7 +437,7 @@ int main() {
 }
 ```
 
-## An RGB Led Bar Class
+## An RGBLedBar class
 
 <!-- Maybe we should refactor this code to make use of array of led objects instead of pointers -->
 
@@ -443,6 +446,7 @@ A led bar is a bar with a certain number of leds. A typical led bar consists of 
 So let's model an RGB led bar that can dynamically allocate the number of LEDs that is requested by the user at runtime.
 
 ```cpp
+// RgbLedBar.h
 #pragma once
 
 #include "RgbLed.h"
@@ -486,6 +490,7 @@ The number of LED's for the default constructor is not implemented as a magic nu
 Since objects of this class will be allocating dynamic memory (the array of leds), a destructor `~RgbLedBar()` needs to be provided to free the memory after an object of this class is destroyed or goes out of scope.
 
 ```cpp
+// RgbLedBar.cpp
 #include "RgbLedBar.h"
 
 namespace Hardware {
@@ -544,6 +549,7 @@ The method `getLed()` returns a pointer to the original object because we want t
 The next code snippet shows a usage example where the number of leds is requested from the user.
 
 ```cpp
+// main.cpp
 #include <iostream>
 #include <ctime>
 #include "RgbLedBar.h"
@@ -593,7 +599,7 @@ RGB Led Bar: [74, 117, 143] <=> [99, 30, 182] <=> [168, 100, 228] <=> [253, 179,
 
 Note that when the main function terminates (closing curly brace is reached), the `bar` object goes out of scope and the destructor is automatically called (as the `RgbLedBar` object itself was actually created on the stack).
 
-## Detecting Memory Leaks using Valgrind
+## Detecting memory leaks using Valgrind
 
 A good tool to check for memory leaks and many other bugs is `valgrind` which is a pure Linux tool. Install it with `apt-get install` command, together with `g++` compiler (and possibly also the `make` tool).
 The tool can also be used on the [Windows Subsystem for Linux](https://learn.microsoft.com/en-us/windows/wsl/install). Then prepend the Linux commands with `wsl`. 

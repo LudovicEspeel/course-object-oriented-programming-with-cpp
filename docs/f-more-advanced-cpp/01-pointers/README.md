@@ -4,11 +4,11 @@ description: Pointers allow direct memory access, a much used feature in C and C
 
 # Pointers
 
-A pointer is **a variable which holds the address to a location in memory**. C++ gives you the power to manipulate data in the computer's memory directly via a pointer. C++ pointers may seem complex at first, but when used correctly they can be very powerfull. In certain areas they cannot be avoided, such as for example when handling **dynamic memory allocation**.
+A pointer is **a variable which holds the address to a location in memory**. C++ gives you the power to manipulate data in the computer's memory directly via a pointer. C++ pointers may seem complex at first, but when used correctly they can be very powerful. In certain areas they cannot be avoided, such as for example when handling **dynamic memory allocation**.
 
-![Pointer Representation](./img/pointer_representation.png)
+![Pointer representation](./img/pointer_representation.png)
 
-## Getting the Address of a Variable
+## Getting the address of a variable
 
 As stated before, a **variable is a symbolic name for a certain location inside your computer memory**. This location is **actually an address**. Using the **address-of operator** `&` one can determine the address of the variable. Consider the following example which will print the address of the variables `x` and `y`:
 
@@ -39,7 +39,7 @@ y = 0 and has an address of 0x6afef8
 Basically, any pointers in a program are **logical** (also called virtual) addresses, never physical (unless you are not running under an operating system - for example on a microcontroller). User space applications have no way of accessing the memory using physical addresses - that's one of the abstractions the OS gives each process. The MMU (Memory management unit) does the translation for every memory access, and it's up to the OS to set up the correct mapping for your process. To do all this in a way that goes completely unnoticed by processes, it has to create a layer of memory mappings that map the pointers that a process has to their actual physical location. But, certainly, the pointers that a program holds are indeed virtual addresses, the proof is simple: they don't change even as the process memory is relocated. Another indication of that is also the fact that if you try to access memory that isn't allocated to the current process, you get a "segmentation fault" or "access violation" error from the OS.
 :::
 
-## Declaring a Pointer Variable
+## Declaring a pointer variable
 
 Like any variable or constant, you must declare a pointer before you can work with it. As C++ is a statically typed language, the **type is required to declare a pointer** - this is the **type of the data** that will live at the memory address the pointer points to. The general form of a pointer variable declaration is:
 
@@ -62,7 +62,7 @@ std::string *pointerToString;  // Pointer to an object of type std::string
 
 The actual data type of the value of all pointers themselves, whether integer, float, character, or otherwise, is the same, a **long hexadecimal number that represents a memory address**. The only difference between pointers of different data types is the data type of the variable or constant that the pointer actually points to.
 
-## Initializing a Pointer
+## Initializing a pointer
 
 As with any other variable, **a pointer needs to be initialized before it can be used**. To accomplish this, one needs to **assign the address of a variable to the pointer**. As shown before, the address of a variable can be retrieved by applying the address-of operator `&` to it. The resulting address can then be assigned to a pointer of the same type as the variable.
 
@@ -80,7 +80,7 @@ std::string greeting = "Hello there";
 std::string *pointerToGreeting = &greeting;
 ```
 
-## Using Pointers
+## Using pointers
 
 Pointers are mainly used to directly access the memory they are pointing to. So in other words, one needs to be able to access the actual data and not the address inside the pointer. This can be achieved by **dereferencing** the pointer using the **dereference operator** `*`. Once the pointer is dereferenced, it can be threated as a normal variable.
 
@@ -113,10 +113,10 @@ While not strictly necessary to add parentheses around the dereferenced pointers
 
 This is also the reason why a pointer needs a dataype. Because the compiler needs to know how to derefence the pointer to access the actual data in memory. It needs to know the type and size of the memory block the pointer is pointing to.
 
-## Pointers and Arrays
+## Pointers and arrays
 
 ::: warning Not correct
-This sections contains some inaccurate information. In fact arrays are not constant pointers but it is said that in certain situation the array decays to a pointer. For example when passing the array to a function/method. Decaying means that the size information is lost of the array.
+This section contains some inaccurate information. In fact arrays are not constant pointers but it is said that in certain situation the array decays to a pointer. For example when passing the array to a function/method. Decaying means that the size information is lost of the array.
 
 > It's said that arrays "decay" into pointers. A C++ array declared as `int numbers[5]` cannot be re-pointed, i.e. you can't say `numbers = 0x5a5aff23`. More importantly the term decay signifies loss of type and dimension; numbers decay into `int*` by losing the dimension information (count 5) and the type is not `int[5]` anymore. Look here for cases where the decay doesn't happen.
 > If you're passing an array by value, what you're really doing is copying a pointer - a pointer to the array's first element is copied to the parameter (whose type should also be a pointer the array element's type). This works due to array's decaying nature; once decayed, sizeof no longer gives the complete array's size, because it essentially becomes a pointer. This is why it's preferred (among other reasons) to pass by reference or pointer.
@@ -226,7 +226,7 @@ cout << "First element via []:\t\t" << pNumber[0] << endl;
 
 Note that the indexing operator already dereferences the actual address.
 
-### Pointer Arithmetic
+### Pointer arithmetic
 
 Since pointers hold addresses, it is perfectly legal to perform **some arithmetic** operations on the actual address value held by the pointer. There are four arithmetic operators that can be performed on pointers:
 
@@ -334,7 +334,7 @@ Or via pointer: 0x61fef0
 </pre>
 :::
 
-## Passing Pointers as Parameters
+## Passing pointers as parameters
 
 C++ allows you to pass a pointer as a parameter to a function/method. To do so, simply declare the function parameter as a pointer type.
 
@@ -345,7 +345,7 @@ Passing data to functions via pointers is often applied in the following situati
 * performance wise it is often done to pass larger and more complex objects (less memory usage and faster than copying complex objects)
 * to pass an array to a function
 
-### Passing Basic Data Types
+### Passing basic data types
 
 Remember the `swap()` function from the "Introduction to C++" chapter. To get this to work one can actually use pointers to integers:
 
@@ -391,11 +391,7 @@ b: 10
 </pre>
 :::
 
-### Passing Arrays
-
-::: warning Faulty Info
-Again this section contains some inaccurate information
-:::
+### Passing arrays
 
 Since arrays are nothing more than constant pointers to the first element in the array, passing arrays is quite straight-forward. One thing to keep in mind is that there is no way to determine the number of elements inside the array when leaving the scope of the where the array was declared. On other words, you will always need to pass the length of the array to the function/method.
 
@@ -495,7 +491,7 @@ int main() {
 
 While not mandatory we can also declare the pointer to be const. Meaning it cannot be assigned to point to another memory location. Not the same as `const int * values` which would mean that we could not change the values of the array.
 
-### Passing Objects
+### Passing objects
 
 Consider a small class `Student`:
 

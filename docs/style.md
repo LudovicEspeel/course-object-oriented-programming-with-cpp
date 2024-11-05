@@ -79,7 +79,7 @@ int main() {
 :::
 ::::::
 
-::: insight Key Insight - How code is executed
+::: insight Key insight - How code is executed
 Code is processed/executed the same way it is written, from top to bottom.
 :::
 

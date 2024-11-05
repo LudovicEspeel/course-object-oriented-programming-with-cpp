@@ -50,13 +50,13 @@ You probable have already been using composition without realizing it. Consider 
 
 While developers will almost never document them as such in a UML diagram, the `name` and `description` attributes are actually instances of a class too, namely of `std::string`. So in other words `Product` is already a basic example of composition.
 
-![Model of a Product with Composition](./img/product_composition.png)
+![Model of a Product with composition](./img/product_composition.png)
 
 When composing objects of other objects, the *sub objects* are generally made private. This hides implementation and allows the designer of the class to change the implementation if needed.
 
 Consider the following example where a `Canvas` is modelled as a composition of a `PixelDisplay` object, which interacts with actual hardware, and `Color` objects that define the color of the foreground drawing and background.
 
-![A Display Device](./img/display_device.png)
+![A display device](./img/display_device.png)
 
 By hiding the `PixelDisplay` object inside the `Canvas`, one hides the complexity of the hardware dependent class. This class may have methods for setting and resetting pixels, for changing hardware timings, for drawing rectangles, circles, and so on. All that is hidden only the ability to show some text, through `display(text:string)`, and display a bitmap, through `display(image:Bitmap)` is made publicly available. This keeps the `Canvas` simple and very user friendly.
 
@@ -68,7 +68,7 @@ Also if one ever wanted to switch from a backlit LCD pixel display to an OLED di
 
 Take for example the class `Motorcycle` shown below, that is composed of several other classes, such as `GearBox`, `Motor` and `Battery`.
 
-![A Motorcycle Model](./img/motorcycle.png)
+![A Motorcycle model](./img/motorcycle.png)
 
 It is very important to know **which constructors** are called and at what time. Let's use the following implementation to illustrate which constructors are called when. Note that the constructors are implemented inline to shorten the code for this example.
 
@@ -168,7 +168,7 @@ Constructing Motorcycle
 
 So basically, when constructing an object of a class, **the default constructors of the composed objects are called first**. When all composed objects are created, **then the composing object is constructed**.
 
-![Constructors Motorcycle and Sub Objects](./img/motorcycle_constructors.png)
+![Constructors motorcycle and sub objects](./img/motorcycle_constructors.png)
 
 Important to think about is:
 

@@ -142,7 +142,7 @@ This means in contrary to the C-library, the build setup first needs to be confi
 cmake -Bbuild -H. -DPAHO_BUILD_DOCUMENTATION=FALSE -DPAHO_BUILD_SAMPLES=FALSE
 ```
 
-![CMake Paho C++ Library](./img/cmake-paho-cpp.png)
+![CMake Paho C++ library](./img/cmake-paho-cpp.png)
 
 Time to build and install the library.
 
@@ -151,7 +151,7 @@ sudo cmake --build build/ --target install
 sudo ldconfig
 ```
 
-![Make Paho C++ Library](./img/make-paho-cpp.png)
+![Make Paho C++ library](./img/make-paho-cpp.png)
 
 You can check if the libraries are correctly installed by using the following command:
 
@@ -182,7 +182,7 @@ g++ main.cpp -lpaho-mqttpp3 -lpaho-mqtt3a -o helloMqtt
 
 The `-l` flags tells the linker to include the `paho-mqtt3a` and `paho-mqttpp3` libraries when linking the final application.
 
-![Async Publish Example](./img/async_publish_example.png)
+![Async publish example](./img/async_publish_example.png)
 
 ## Linux
 

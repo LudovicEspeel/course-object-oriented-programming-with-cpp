@@ -206,7 +206,7 @@ module.exports = {
         }],
         ['container', {
             type: 'insight',
-            defaultTitle: 'Key Insight',
+            defaultTitle: 'Key insight',
         }],
         ['vuepress-plugin-code-copy', {
             // selector: String,

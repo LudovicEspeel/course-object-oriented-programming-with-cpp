@@ -2,21 +2,21 @@
 description: Introduction into basic syntax of C++ and compiler setup
 ---
 
-# Hello World
+# Hello world
 
-A "Hello, World!" application is a computer program that **outputs or displays the message "Hello, World!" to the user**. Being a very simple program in most programming languages, it is **often used to illustrate the basic syntax of a programming language** for a working program. In many cases it is the very first program people write when they are new to the language.
+A "Hello world!" application is a computer program that **outputs or displays the message "Hello world!" to the user**. Being a very simple program in most programming languages, it is **often used to illustrate the basic syntax of a programming language** for a working program. In many cases it is the very first program people write when they are new to the language.
 
-![Hello World](./img/hello_world.jpg)
+![Hello world](./img/hello_world.jpg)
 
-A "Hello, world!" program is commonly used to introduce novice programmers to a programming language. In general, it is simple enough to be understood easily, especially with the guidance of a teacher or a written guide.
+A "Hello world!" program is commonly used to introduce novice programmers to a programming language. In general, it is simple enough to be understood easily, especially with the guidance of a teacher or a written guide.
 
 In addition, "Hello world!" can be a **useful sanity test** to make sure that a language's compiler, development environment, and run-time environment are correctly installed. Configuring a complete programming toolchain from scratch to the point where even trivial programs can be compiled and run can involve substantial amounts of work. For this reason, a simple program is used first when testing a new tool chain.
 
-"Hello world!" is also **used by computer hackers as a proof of concept** that arbitrary code can be executed through an exploit where the system designers did not intend code to be executed—for example, on Sony's PlayStation Portable. This is the first step in using homemade content ("home brew") on such a device.
+"Hello world!" is also **used by computer hackers as a proof of concept** that arbitrary code can be executed through an exploit where the system designers did not intend code to be executed - for example, on Sony's PlayStation Portable. This is the first step in using homemade content ("home brew") on such a device.
 
-![Hello World on PSP](./img/psp_hello_world.jpeg)
+![Hello world on PSP](./img/psp_hello_world.jpeg)
 
-## Writing C++ Code
+## Writing C++ code
 
 Writing C++ code does not require a fancy IDE. All one actually needs is a simple text editor. However using an versatile editor such as **Visual Studio Code** or similar does support our programming life a lot more.
 
@@ -28,7 +28,7 @@ Checkout the [Software Installation Guide](https://software-installation-guide.n
 
 As a compiler you can make use of **MinGW** which stands for "Minimalist GNU for Windows", which is a native Windows port of the GNU Compiler Collection (GCC).
 
-::: insight Key Insight - GNU
+::: insight Key insight - GNU
 GNU is an operating system and an extensive collection of computer software. **GNU is composed wholly of free software**, most of which is licensed under GNU's own GPL (General Purpose License). GNU is a recursive acronym for "GNU's Not Unix!", chosen because GNU's design is Unix-like, but differs from Unix by being free software and containing no Unix code. The GNU project includes an operating system kernel, GNU HURD, which was the original focus of the Free Software Foundation (FSF). However, non-GNU kernels, most famously Linux, can also be used with GNU software; and since the kernel is the least mature part of GNU, this is how it is usually used. The combination of GNU software and the Linux kernel is commonly known as GNU/Linux.
 :::
 
@@ -44,9 +44,9 @@ The Windows Subsystem for Linux (WSL) lets developers install a Linux distributi
 More info how to setup: [https://learn.microsoft.com/en-us/windows/wsl/install](https://learn.microsoft.com/en-us/windows/wsl/install). 
 Prepend the Linux commands always with `wsl` in the PowerShell terminal.
 
-## Hello World in C++
+## Hello world in C++
 
-Let's jump right in and create our "Hello World" application in C++. Create a new directory somewhere on your system and call it `hello-world-cpp` or something similar. Open the directory with VSCode.
+Let's jump right in and create our "Hello world" application in C++. Create a new directory somewhere on your system and call it `hello-world-cpp` or something similar. Open the directory with VSCode.
 
 Open your favorite editor or IDE and create a new C++ application. Place the code below in a file called `main.cpp`. This file often serves as the **entry point** of the application containing the `main` function which contains the code to execute when the application is started.
 
@@ -56,18 +56,18 @@ Open your favorite editor or IDE and create a new C++ application. Place the cod
 using namespace std;
 
 int main() {
-  // Display Hello World! in the terminal
-  cout << "Hello World!" << endl;
+  // Display Hello world! in the terminal
+  cout << "Hello world!" << endl;
 
   return 0;
 }
 ```
 
-::: insight Key Insight - How code is executed
+::: insight Key insight - How code is executed
 Code is processed/executed the same way it is written, from top to bottom.
 :::
 
-## Compiling the Code
+## Compiling the code
 
 To compile the code (translate our instructions to instructions understood by our computer's processor), the `g++` compiler needs to be called. This can be achieved by entering the following command into a terminal (*bash* or *powershell*):
 
@@ -81,13 +81,13 @@ On Windows this will produce a binary file called `hello.exe` while on linux it 
 ./hello
 ```
 
-The result should be the text "Hello World!" printed to the terminal as shown below.
+The result should be the text "Hello world!" printed to the terminal as shown below.
 
-![Hello World output](./img/hello_world_output.png)
+![Hello world output](./img/hello_world_output.png)
 
-## Code Analysis
+## Code analysis
 
-Below is a small analysis of the "Hello World" application. It will get you familiarized with the syntax of C++ and will serve as a starting point for almost every application you will ever create in C++.
+Below is a small analysis of the "Hello world" application. It will get you familiarized with the syntax of C++ and will serve as a starting point for almost every application you will ever create in C++.
 
 ```cpp
 #include <iostream>
@@ -95,20 +95,20 @@ Below is a small analysis of the "Hello World" application. It will get you fami
 using namespace std;
 
 int main() {
-  // Display Hello World! in the terminal
-  cout << "Hello World!" << endl;
+  // Display Hello world! in the terminal
+  cout << "Hello world!" << endl;
 
   return 0;
 }
 ```
 
-::: tip ⌨️ Tip - Type, Don't Copy
+::: tip ⌨️ Tip - Type, don't copy
 The best tip for the moment is to type over the hello world application into VSCode. Don't copy the code. This will get you familiarized with the syntax of C++. **Want to challenge yourself?** Then try to memorize the hello world example. Type it in and compile it. Does it fail, then fix it. Now do it all over again until you get it right from the first time.
 :::
 
-### Pre-Processor Directives
+### Preprocessor directives
 
-Lines beginning with a hash sign `#` are called **pre-processor directives**. These lines are processed by an application that is run before the actual code compiler. In this case, the directive `#include <iostream>`, instructs the preprocessor to **include a standard C++ header** file called `iostream`. It is **part of the standard C++ library** and allows the rest of the code to perform standard input and output operations, such as writing the output of this program - `Hello World` - to the terminal.
+Lines beginning with a hash sign `#` are called **preprocessor directives**. These lines are processed by an application that is run before the actual code compiler. In this case, the directive `#include <iostream>`, instructs the preprocessor to **include a standard C++ header** file called `iostream`. It is **part of the standard C++ library** and allows the rest of the code to perform standard input and output operations, such as writing the output of this program - `Hello world` - to the terminal.
 
 ```cpp{1}
 #include <iostream>
@@ -116,14 +116,14 @@ Lines beginning with a hash sign `#` are called **pre-processor directives**. Th
 using namespace std;
 
 int main() {
-  // Display Hello World! in the terminal
-  cout << "Hello World!" << endl;
+  // Display Hello world! in the terminal
+  cout << "Hello world!" << endl;
 
   return 0;
 }
 ```
 
-### Whitespace and Case-Sensitive
+### Whitespace and case-sensitive
 
 As in most programming languages, whitespace such as newlines, tabs and spaces have no effect on the code itself as long as they are not placed within variable names or C++ keywords. It is even encouraged to place white space around certain code construct. Code indentation (placing tabs on the last) is also considered good practice as it contributes to the readability of the code.
 
@@ -133,8 +133,8 @@ As in most programming languages, whitespace such as newlines, tabs and spaces h
 using namespace std;
 
 int main() {
-  // Display Hello World! in the terminal
-  cout << "Hello World!" << endl;
+  // Display Hello world! in the terminal
+  cout << "Hello world!" << endl;
 
   return 0;
 }
@@ -154,8 +154,8 @@ If you have seen C++ code before, you may have seen `cout` being used instead of
 using namespace std;
 
 int main() {
-  // Display Hello World! in the terminal
-  cout << "Hello World!" << endl;
+  // Display Hello world! in the terminal
+  cout << "Hello world!" << endl;
 
   return 0;
 }
@@ -163,7 +163,7 @@ int main() {
 
 In order to refer to the elements in the `std` namespace a program must either qualify each and every use of elements of the library (by prefixing the elements with `std::`), or introduce visibility of the namespace components. The most typical way to introduce visibility of these components is by means of using a declaration such as `using namespace std;`
 
-### The main Function
+### The main function
 
 `int main()` declares a function called `main`. The main function of a C++ application is also called the **entry point** of the application. The execution of all C++ programs begins with the main function, regardless of where the function is actually located within the code.
 
@@ -173,8 +173,8 @@ In order to refer to the elements in the `std` namespace a program must either q
 using namespace std;
 
 int main() {
-  // Display Hello World! in the terminal
-  cout << "Hello World!" << endl;
+  // Display Hello world! in the terminal
+  cout << "Hello world!" << endl;
 
   return 0;
 }
@@ -182,7 +182,7 @@ int main() {
 
 Essentially, **a function is a block of statements that are grouped by a name**, in this case `main`. The return type of the `main` function is `int`, short for `integer`, stating that the function **returns an integral value upon completion**. This also explains the `return 0` statement at the end of the function block. Applications are always terminated with an integral value that represents the state with which the application was terminated. A value different from `0` indicates that something has gone wrong. If you execute your application via a terminal such as `bash` or `PowerShell` you can display the status code (the value returned by the `main` function in this case) by executing the command `echo $?`.
 
-![Status Code of an Application](./img/status_code.png)
+![Status code of an application](./img/status_code.png)
 
 Optionally the `main` function can be declared to take arguments from the command line (declared between the parentheses `()`). This will however be discussed later on in this course.
 
@@ -198,16 +198,16 @@ Two forward slash signs `//` indicate that the rest of the line is a **comment**
 using namespace std;
 
 int main() {
-  // Display Hello World! in the terminal
-  cout << "Hello World!" << endl;
+  // Display Hello world! in the terminal
+  cout << "Hello world!" << endl;
 
   return 0;
 }
 ```
 
-### Output to the Terminal Statement
+### Output to the terminal statement
 
-The line `cout << "Hello World!" << endl;` is called a C++ **statement**. A statement is an expression that **can actually produce some effect**. This will not always be visual output. The statements **specify the actual behavior of the application**. Statements are executed in the same order that they appear.
+The line `cout << "Hello world!" << endl;` is called a C++ **statement**. A statement is an expression that **can actually produce some effect**. This will not always be visual output. The statements **specify the actual behavior of the application**. Statements are executed in the same order that they appear.
 
 ```cpp{7}
 #include <iostream>
@@ -215,8 +215,8 @@ The line `cout << "Hello World!" << endl;` is called a C++ **statement**. A stat
 using namespace std;
 
 int main() {
-  // Display Hello World! in the terminal
-  cout << "Hello World!" << endl;
+  // Display Hello world! in the terminal
+  cout << "Hello world!" << endl;
 
   return 0;
 }
@@ -230,7 +230,7 @@ This statement has three parts:
 
 Notice that the **statement ends with a semicolon** `;`. This character marks the end of the statement (that is why it is called the **statement terminator**). All C++ statements must end with a semicolon character. One of the most common syntax errors in C++ is forgetting to end a statement with a semicolon.
 
-::: insight Key Insight - Statement
+::: insight Key insight - Statement
 A statement is an expression that expresses some action to be carried out. This will not always be visual output. The statements specify the actual behavior of the application. Statements are executed in the same order that they appear. In C++ all statements must end with a `;`, the statement terminator.
 :::
 
@@ -252,18 +252,18 @@ Try to solve the exercises yourself.
 using namespace std;
 
 int main() {
-  // Display Hello World! in the terminal
-  cout << "Hello World!" << endl;
+  // Display Hello world! in the terminal
+  cout << "Hello world!" << endl;
 
   return 0;
 }
 ```
 
-### 3. Status Code
+### 3. Status code
 
 *Create a small C++ application that returns a value other than `0`. Typically a negative number is returned to indicate that something went wrong. Run that application using a terminal and show the status code.*
 
-### 4. Personalized Output
+### 4. Personalized output
 
 *Alter the hello world application to output a personalized message. Try to output a text stating who made the application. Also state where you are currently following this course.*
 
@@ -273,8 +273,8 @@ int main() {
 using namespace std;
 
 int main() {
-  // Display Hello World! in the terminal
-  cout << "Hello World!" << endl;
+  // Display Hello world! in the terminal
+  cout << "Hello world!" << endl;
 
   return 0;
 }

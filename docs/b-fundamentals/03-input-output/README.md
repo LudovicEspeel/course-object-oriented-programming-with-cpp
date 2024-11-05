@@ -2,7 +2,7 @@
 description: needs to be done
 ---
 
-# Input and Output
+# Input and output
 
 C++ uses a convenient abstraction called **streams** to perform input and output operations in sequential media such as the screen, the keyboard or a file. A stream is an entity where a program can either insert or extract characters to/from. There is no need to know details about the media associated to the stream or any of its internal specifications. All the programmer needs to know is that streams are a source/destination of characters, and that these characters are provided/accepted sequentially.
 
@@ -23,7 +23,7 @@ All output streams (`cout`, `cerr` and `clog`) work exactly the same way. Only t
 
 `cin` is an instance of a class named `istream`, while `cout` and `cerr` are instances of of a class named `ostream`. All three instances or objects are stored in the standard library, which the linker searches while creating the final executable program.
 
-## Standard Output Stream
+## Standard output stream
 
 In C++, output to the display console is done via `cout` and the stream insertion operator `<<`. The `<<` operator inserts the data that follows it into the stream that precedes it.
 
@@ -78,7 +78,7 @@ Notice that the string literals are enclosed in double quotes `"`, while the var
 
 Also notice that each line here is constructed using a separate `cout` statement in comparison to the previous example where the three lines were constructed using a single statement. There is no real difference in the end result and no preference towards one construct.
 
-### Escape Characters
+### Escape characters
 
 Escape characters are special characters than can be used inside a string. They always are prefixed with a backslash `\`. Most programming languages have them. The code below shows examples of all these techniques.
 
@@ -115,7 +115,7 @@ The table below lists the most used escape sequences.
 | `\"` | Insert a double quote character in the text at this point. |
 | `\\` | Insert a backslash character in the text at this point. |
 
-## Standard Input Stream
+## Standard input stream
 
 The `cin` object in C++ is an object of class `istream`. It is used to accept the input from the standard input device. In most program environments, the standard input is by default the keyboard.
 
@@ -153,7 +153,7 @@ cin >> numberA >> numberB;
 cout << "Sum: " << (numberA + numberB) << endl;
 ```
 
-### For Future Reference
+### For future reference
 
 The `cin` object can also be used with other methods. Some of the commonly used methods are:
 
@@ -166,7 +166,7 @@ The `cin` object can also be used with other methods. Some of the commonly used 
 
 More info about these methods can be found at [http://www.cplusplus.com/reference/istream/istream/](http://www.cplusplus.com/reference/istream/istream/).
 
-## Standard Error Stream
+## Standard error stream
 
 The standard error stream `cerr` is the default destination for error messages and other diagnostic warnings. Like `cout``, it is usually also directed by default to the text console (generally, on the screen).
 
@@ -193,11 +193,11 @@ However if we run the binary as follows in (works both with PowerShell and bash)
 This is normal output
 ```
 
-## Changing the Number System
+## Changing the number system
 
 Sometimes you may require numbers to be inputted or outputted using a different number system such as hexadecimal or octal. This can easily be achieved by setting the correct base using the different manipulators that are available in C++.
 
-| Manipulator | Number System | Base Prefix |
+| Manipulator | Number System | Base prefix |
 | --- | --- | --- |
 | `dec` | Switch stream to decimal base format | - |
 | `hex` | Switch stream to hexadecimal base format | `0x` |
@@ -229,7 +229,7 @@ Using `setfill` and `setw`, one can for example prefix the number with leading z
 
 By default the number format prefix is not shown when outputting values. This can be altered with the `showbase` and `noshowbase` manipulators. The `showbase` manipulator can however give conflicts with other manipulators (such as `setfill` and `setw`) so it is often a better option to output this yourself.
 
-### Applied to Standard Input
+### Applied to standard input
 
 The number format manipulators can also be applied the standard input stream `cin`. It will even allow the user to type the number with and without the base prefix.
 
@@ -262,7 +262,7 @@ The value in DEC format: 171
 
 Try to solve the exercises yourself. Don't go copy pasting other people's solutions.
 
-### 1. Wrong Input
+### 1. Wrong input
 
 *What happens when the user inputs something different than a number. For example a character `b` or a string `Hello`? Can you explain what happens? How can we detect this?*
 
@@ -273,7 +273,7 @@ int number;
 cin >> number;
 ```
 
-### 2. Output Hexadecimal Value
+### 2. Output hexadecimal value
 
 *Can you alter the next code snippet so the number is outputted in hexadecimal format, with a leading `0x` and a width of 4 hexadecimal digits? Note that this will require the `iomanip` library to be included (already done for you).*
 

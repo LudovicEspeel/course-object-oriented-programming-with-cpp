@@ -283,7 +283,7 @@ cout << endl;
 
 In the previous example the `value` variable holds a copy of the original value. Meaning that if we change value it will not be reflected to the original.
 
-::: insight Key Insight - Type inference 
+::: insight Key insight - Type inference 
 Type inference refers to automatic deduction of the data type of an expression in a programming language. Before C++ 11, each data type needs to be explicitly declared at compile time, limiting the values of an expression at runtime but after the new version of C++, many keywords are included which allows a programmer to leave the type deduction to the compiler itself.
 
 With type inference capabilities, we can spend less time having to write out things compiler already knows. As all the types are deduced in compiler phase only, the time for compilation increases slightly but it does not affect the run time of the program.
@@ -370,4 +370,4 @@ int main() {
 
 *Check the vector and matrix multiplication below by writing a small application for it.*
 
-![Matrix and Vector Multiplication](./img/matrix_vector_multiplication.png)
+![Matrix and vector multiplication](./img/matrix_vector_multiplication.png)

@@ -263,7 +263,7 @@ b: 136
 
 But what if we wanted this to work. Well then you need to pass the data using pointers or references. More on this later.
 
-::: insight Key Insight - Return by Value
+::: insight Key insight - Return by Value
 When returning a local variable from a function/method, the same applies. A copy of the local variable is returned (via the stack as we will see later on) after which the actual local variable goes out of scope and ceases to exist.
 :::
 
