@@ -691,8 +691,8 @@ The operator `&` is used in 2 situations, which can be confusing. Let's briefly 
 * `&` operator to the **right of** the assignment operator `=` indicates the **address of a variable**.
 * `&` operator to the **left of** the assignment operator `=` represents an **alias**.
 * `&` operator **before an argument** when calling a function indicates **passing by pointer**.
-In the function declaration, a `*` is therefor added before the corresponding parameter.
-* `&` operator **before a parameter** in a function represents an **alias**.
+In the function declaration, a `*` is therefor added before the corresponding parameter name.
+* `&` operator **before a parameter name** in a function represents an **alias**.
 :::
 
 ## So why pointers?
