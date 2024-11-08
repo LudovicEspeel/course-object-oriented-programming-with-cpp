@@ -329,26 +329,22 @@ The implementation of the `Color` class can be found [here](README2.md).
 
 #include "Color.h"
 
-namespace Hardware {
-  class RgbLed {
+using namespace std;
+using namespace Visual;
 
-    // Constructors
-    public:
-      RgbLed(void);
-      RgbLed(Visual::Color color);
+namespace Hardware
+{
+  class RgbLed
+  {
+  public:
+    RgbLed();
+    RgbLed(const Color &color);
+    Color getColor() const;
+    void setColor(const Color &color);
+    string getString() const;
 
-    // Setters
-    public:
-      void setColor(Visual::Color color);
-
-    // Getters
-    public:
-      Visual::Color getColor(void);
-      std::string getString(void);
-
-    // Attributes
-    private:
-      Visual::Color color;
+  private:
+    Color color;
   };
 };
 ```
@@ -364,39 +360,35 @@ The implementation that belongs to the previous header file is shown below.
 // RgbLed.cpp
 #include "RgbLed.h"
 
-using namespace Visual;
+using namespace Hardware;
 
-namespace Hardware {
+RgbLed::RgbLed(void) : RgbLed(Color(255, 0, 0)) {}
 
-  RgbLed::RgbLed(void)
-    : RgbLed(Color(255, 0, 0)) {
-  }
+RgbLed::RgbLed(const Color &color)
+{
+  setColor(color);
+}
 
-  RgbLed::RgbLed(Color color) {
-    setColor(color);
-  }
+void RgbLed::setColor(const Color &color)
+{
+  this->color = color;
+}
 
-  void RgbLed::setColor(Color color) {
-    this->color = color;
-  }
+Color RgbLed::getColor() const
+{
+  return color;
+}
 
-  Color RgbLed::getColor(void) {
-    return color;
-  }
-
-  std::string RgbLed::getString(void) {
-    return color.getString();
-  }
-
-};
+string RgbLed::getString() const
+{
+  return color.getString();
+}
 ```
 
 While most of the code is self-explanatory, the default constructor does need some explanation.
 
 ```cpp
-RgbLed::RgbLed(void)
-  : RgbLed(Color(255, 0, 0)) {
-}
+RgbLed::RgbLed(void) : RgbLed(Color(255, 0, 0)) {}
 ```
 
 The part after the colon `:` is called the **constructor-initialization list** and is executed before the body of the constructor. Here it allows us to call another constructor of the same class before executing the code of the current constructor. This allows us to keep the code as DRY as possible.
@@ -418,9 +410,10 @@ Let's take a look at a usage example where we create an object on the stack.
 #include "RgbLed.h"
 
 using namespace std;
+using namespace Hardware;
 
 int main() {
-  Hardware::RgbLed aliveLed;
+  RgbLed aliveLed;
 
   cout << "Red = " << aliveLed.getColor().getRed() << endl;
   cout << "Green = " << aliveLed.getColor().getGreen() << endl;
@@ -452,33 +445,24 @@ So let's model an RGB led bar that can dynamically allocate the number of LEDs t
 #include "RgbLed.h"
 #include <string>
 
-namespace Hardware {
-  class RgbLedBar {
+using namespace std;
 
-    // Constructors
-    public:
-      RgbLedBar(void);
-      RgbLedBar(unsigned int numberOfLeds);
+namespace Hardware
+{
+  class RgbLedBar
+  {
+  public:
+    RgbLedBar();
+    RgbLedBar(unsigned int numberOfLeds);
+    ~RgbLedBar();
+    RgbLed *getLed(unsigned int index) const;
+    unsigned int getLength() const;
+    string getString() const;
 
-    // Destructors
-    // - Required for freeing dynamically allocated memory
-    public:
-      ~RgbLedBar(void);
-
-    // Getters
-    public:
-      RgbLed *getLed(unsigned int index);
-      unsigned int getLength(void);
-
-    // Other
-    public:
-      std::string getString(void);
-
-    // Attributes
-    private:
-      static const unsigned int DEFAULT_SIZE = 8;
-      unsigned int numberOfLeds;
-      RgbLed *leds;
+  private:
+    static const unsigned int DEFAULT_SIZE = 8;
+    unsigned int numberOfLeds;
+    RgbLed *leds;
   };
 };
 ```
@@ -492,48 +476,58 @@ Since objects of this class will be allocating dynamic memory (the array of leds
 ```cpp
 // RgbLedBar.cpp
 #include "RgbLedBar.h"
+#include <iostream>
 
-namespace Hardware {
+using namespace Hardware;
 
-  RgbLedBar::RgbLedBar(void)
-    : RgbLedBar(DEFAULT_SIZE) {
+RgbLedBar::RgbLedBar() : RgbLedBar(DEFAULT_SIZE) {}
+
+RgbLedBar::RgbLedBar(unsigned int numberOfLeds)
+{
+  cout << "constructor" << endl;
+
+  this->numberOfLeds = numberOfLeds;
+  leds = new RgbLed[this->numberOfLeds];
+}
+
+RgbLedBar::~RgbLedBar()
+{
+  cout << "destructor" << std::endl;
+  delete[] leds;
+  leds = nullptr;
+}
+
+RgbLed *RgbLedBar::getLed(unsigned int index) const
+{
+  if (index >= numberOfLeds)
+  {
+    return nullptr;
   }
 
-  RgbLedBar::RgbLedBar(unsigned int numberOfLeds) {
-    this->numberOfLeds = numberOfLeds;
-    // Dynamically allocate memory for the array of leds
-    leds = new RgbLed[this->numberOfLeds];
-  }
+  return &leds[index];
+}
 
-  RgbLedBar::~RgbLedBar(void) {
-    delete[] leds;
-    leds = nullptr;
-  }
+unsigned int RgbLedBar::getLength() const
+{
+  return numberOfLeds;
+}
 
-  RgbLed *RgbLedBar::getLed(unsigned int index) {
-    if (index >= numberOfLeds) {
-      return nullptr;
+string RgbLedBar::getString() const
+{
+  string output = "RGB Led Bar: ";
+
+  for (unsigned int i = 0; i < numberOfLeds; i++)
+  {
+    output += leds[i].getString();
+
+    if (i < numberOfLeds - 1)
+    {
+      output += " <=> ";
     }
-
-    return &leds[index];
   }
 
-  unsigned int RgbLedBar::getLength(void) {
-    return numberOfLeds;
-  }
-
-  std::string RgbLedBar::getString(void) {
-    std::string output = "RGB Led Bar: ";
-    for (unsigned int i = 0; i < numberOfLeds; i++) {
-      output += leds[i].getString();
-      if (i < numberOfLeds-1) {
-         output += " <=> ";
-      }
-    }
-    return output;
-  }
-
-};
+  return output;
+}
 ```
 
 Something new here. The destructor needs to use the `delete[]` operator since `leds` is an array of objects and not a single object.
@@ -555,32 +549,35 @@ The next code snippet shows a usage example where the number of leds is requeste
 #include "RgbLedBar.h"
 
 using namespace std;
+using namespace Hardware;
+using namespace Visual;
 
-int main() {
+int main()
+{
+     cout << "Welcome to LED Bar Demo ..." << endl;
 
-  cout << "Welcome to LED Bar Demo ..." << endl;
+     unsigned int numberOfLeds = 0;
+     cout << "How many leds would you like to add to the ledbar? ";
+     cin >> numberOfLeds;
 
-  unsigned int numberOfLeds = 0;
-  cout << "How many leds would you like to add to the ledbar? ";
-  cin >> numberOfLeds;
+     cout << endl;
+     cout << "Creating a ledbar with ";
+     cout << numberOfLeds << " leds" << endl;
 
-  cout << endl << "Creating a ledbar with "
-    << numberOfLeds << " leds" << endl;
+     RgbLedBar bar(numberOfLeds);
+     cout << bar.getString() << endl;
 
-  Hardware::RgbLedBar bar(numberOfLeds);
-  cout << bar.getString() << endl;
+     cout << endl;
+     cout << "Let us set some random colors:" << endl;
 
-  cout << endl << "Let us set some random colors:" << endl;
+     srand(time(NULL)); // NULL = 0 in C++
+     for (unsigned int i = 0; i < bar.getLength(); i++)
+     {
+          bar.getLed(i)->setColor(Color(rand() % 255, rand() % 255, rand() % 255));
+     }
+     cout << bar.getString() << endl;
 
-  srand(time(NULL)); // NULL = 0 in C++
-  for (unsigned int i = 0; i < bar.getLength(); i++) {
-    bar.getLed(i)->setColor(
-      Visual::Color(rand()%255, rand()%255, rand()%255)
-    );
-  }
-  cout << bar.getString() << endl;
-
-  return 0;
+     return 0;
 }
 ```
 
