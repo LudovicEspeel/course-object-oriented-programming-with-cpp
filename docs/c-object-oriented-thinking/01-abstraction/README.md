@@ -12,7 +12,7 @@ The same is valid when designing software. More even when working in team on lar
 
 When working on projects at a certain level, it is a good idea to apply the concept of abstraction.
 
-## What is abstraction
+## What is abstraction?
 
 The concept of abstraction is to actually **know as little as possible**. All you need to know are the things that are important to you.
 
@@ -34,7 +34,7 @@ Abstracting things allows us to establishing a level of complexity on which a pe
 
 Take for example a programmer that is developing a calculator application. This programmer might not be interested in the way numbers are represented in the underlying hardware (e.g. whether they're 16 bit or 32 bit integers). The boundary where those details have been suppressed, we can state that they have been abstracted away. The programmer now just has numbers with which he can work.
 
-## Programming Languages provide Abstractions
+## Programming languages provide abstractions
 
 All programming languages provide abstractions. The actual quality of the abstractions will determine the complexity of the problem you are able to solve. Try writing an MMORPG game using nothing but assembler.
 
@@ -50,7 +50,7 @@ A nice video about abstraction can be found at Computerphile.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/ycl1VL0q1rs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-## Advantages of Abstraction
+## Advantages of abstraction
 
 For the most part, "knowing" in and of itself isn't necessarily bad, but "not knowing" can have its advantages. One of the main advantages of abstraction is that is let's us build complex systems much faster as we can rest our weary minds about the internals of the libraries, classes, functions, ... that can be used. If the standard libraries of C++ or the standard packages of Java were not there for us, we would still be coding on that first "hello world" program.
 
@@ -62,7 +62,7 @@ Some months later, the author of the module decides that they want to use a bett
 
 However, your code breaks, because it continues to assume that the internal data structure of the module is an array, which in fact no longer exists. If you still choose not to use the functions made available by the author, you'll have to find out how their hash table works, and to update your code accordingly. Of course, that might just break again when the author makes another performance breakthrough in his module.
 
-## Pseudo Code Example
+## Pseudo code example
 
 Let us consider a less abstract example (pun intended).
 

@@ -2,11 +2,11 @@
 description: needs to be done
 ---
 
-# Using Objects
+# Using objects
 
 Before we can *use* objects we need to create them based on a class. The standard library has some classes that we can instantiate in our applications.
 
-## Creating Objects
+## Creating objects
 
 One of the most used classes from the std library is the `string` class.
 
@@ -24,7 +24,7 @@ Note the difference between object instantiation with a default constructor and 
 
 In C++ we do not add parentheses `()` when using the default constructor. If you do, C++ thinks you are calling a function.
 
-::: warning string vs String
+::: warning string vs. String
 Note that normally we will define class names using capital letters. This is a common practice in object oriented programming. Too bad C++ did not follow this convention. This results in std classes that start with lower case letters
 :::
 
@@ -34,7 +34,7 @@ The `string` class is a bit special as it also allows you to create a string obj
 std::string myName = "Jef Desmet";
 ```
 
-## Calling Methods
+## Calling methods
 
 Once an object is created, one can start calling methods on the object using the `.` operator.
 
@@ -55,7 +55,7 @@ Length of "Hello from C++" is 14
 
 The `std::string` class defines a lot of useful methods we can call on `std::string` objects. Make sure to take a look at them at [https::/cplusplus.com/reference/string/string](https::/cplusplus.com/reference/string/string).
 
-### Passing Arguments
+### Passing arguments
 
 Some methods will require you to pass external information to the method so it can do its work.
 

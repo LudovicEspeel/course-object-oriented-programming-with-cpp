@@ -4,16 +4,14 @@ description: needs to be done
 
 # Exceptions
 
-*This chapter is an early draft. Bit more of a slide deck*.
-
 Exceptions are used to indicate exceptional situations that may fail the application.
 
-## Return Codes
+## Return codes
 
 Returning negative values from a function/method is a common way of indicating an error has occurred.
 
 ```cpp
-int index_of_first_char(std::string text, char c) {
+int indexOfFirstChar(std::string text, char c) {
   for (unsigned int i = 0; i < text.length(); i++) {
     if (text[i] == c) {
       return i;
@@ -67,7 +65,7 @@ read_file(filename, lines):
 
 Exceptions provide a mechanism to decouple error code from normal control flow of your application. They also provide a way to handle the errors when most appropriate (cfr. call stack).
 
-## What are Exceptions
+## What are exceptions?
 
 Exceptions (exceptional events) are problems that occur during the execution of an application, which disrupt the normal flow of the application's code. If the exception is not handled by the application code itself, the process terminates abnormally.
 
@@ -80,7 +78,7 @@ An exception can occur on many different occasions. Some common reasons are:
 
 Some of these exceptions are caused by user error, others by programmer error, and others by physical resources that have failed in some manner.
 
-## Throwing an Exception
+## Throwing an exception
 
 Throwing an exception is like giving the system a signal something abnormal has happened. This is also called **raising an exception**.
 
@@ -104,7 +102,7 @@ throw std::string("Failed to open connection");
 throw FileNotFoundException(filename);
 ```
 
-## Catching and Handling Exceptions
+## Catching and handling exceptions
 
 When executing code that may throw an exception, it will need to be put inside a `try` block.
 
@@ -169,7 +167,7 @@ int main() {
 }
 ```
 
-## More Realistic Example
+## More realistic example
 
 
 ```cpp
@@ -204,7 +202,7 @@ int main() {
 }
 ```
 
-### Call Stack Example
+### Call stack example
 
 ```cpp
 try
@@ -220,9 +218,9 @@ try
 std::cout << "Code continues here" << std::endl;
 ```
 
-## Inheritance Example
+## Inheritance example
 
-(More on this later)
+More about inheritance later.
 
 ```cpp
 #include <iostream>
@@ -257,8 +255,6 @@ int main() {
   return 0;
 }
 ```
-
-Make sure to add later, important:
 
 * [https://www.learncpp.com/cpp-tutorial/145-exceptions-classes-and-inheritance/](https://www.learncpp.com/cpp-tutorial/145-exceptions-classes-and-inheritance/)
 * [https://www.learncpp.com/cpp-tutorial/14-6-rethrowing-exceptions/](https://www.learncpp.com/cpp-tutorial/14-6-rethrowing-exceptions/)

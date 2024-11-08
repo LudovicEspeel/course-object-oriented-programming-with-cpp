@@ -106,7 +106,7 @@ You can also use quotes here but they need to be escaped:
 
 The table below lists the most used escape sequences.
 
-| Escape Sequence | Description |
+| Escape sequence | Description |
 | --- | --- |
 | `\t` | Insert a tab in the text at this point. |
 | `\b` | Insert a backspace in the text at this point. |
@@ -197,13 +197,13 @@ This is normal output
 
 Sometimes you may require numbers to be inputted or outputted using a different number system such as hexadecimal or octal. This can easily be achieved by setting the correct base using the different manipulators that are available in C++.
 
-| Manipulator | Number System | Base prefix |
+| Manipulator | Number system | Base prefix |
 | --- | --- | --- |
 | `dec` | Switch stream to decimal base format | - |
 | `hex` | Switch stream to hexadecimal base format | `0x` |
 | `oct` | Switch stream to octal base format | `0` |
 
-::: warning Warning - No Binary manipulator
+::: warning Warning - No binary manipulator
 Note that there is no manipulator for the binary system. Almost any type can however be easily converted to binary using the `bitset` library. More information about bitset can be found here: [https://en.cppreference.com/w/cpp/utility/bitset](https://en.cppreference.com/w/cpp/utility/bitset).
 :::
 
@@ -264,7 +264,7 @@ Try to solve the exercises yourself. Don't go copy pasting other people's soluti
 
 ### 1. Wrong input
 
-*What happens when the user inputs something different than a number. For example a character `b` or a string `Hello`? Can you explain what happens? How can we detect this?*
+What happens when the user inputs something different than a number. For example a character `b` or a string `Hello`? Can you explain what happens? How can we detect this?
 
 ```cpp
 cout << "Please enter a number: ";
@@ -275,7 +275,7 @@ cin >> number;
 
 ### 2. Output hexadecimal value
 
-*Can you alter the next code snippet so the number is outputted in hexadecimal format, with a leading `0x` and a width of 4 hexadecimal digits? Note that this will require the `iomanip` library to be included (already done for you).*
+Can you alter the next code snippet so the number is outputted in hexadecimal format, with a leading `0x` and a width of 4 hexadecimal digits? Note that this will require the `iomanip` library to be included (already done for you).
 
 ```cpp
 #include <iostream>

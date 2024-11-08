@@ -207,7 +207,7 @@ method for each type of Animal. This would definitely cause lots of errors and h
 
 So polymorphism is again another technique that allows us to write short, clean and maintainable code.
 
-### Virtual Destructors
+### Virtual destructors
 
 The `virtual` keyword is not only important for methods we which to override and access via base class pointers. It is also important when considering dynamic memory usage. When reserving memory in your objects, you need to free it once the objects are destroyed. This is accomplished using the `delete` keyword. This has been discussed in detail in the chapter "Dynamic Memory Allocation".
 

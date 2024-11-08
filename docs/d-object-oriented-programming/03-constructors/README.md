@@ -107,7 +107,7 @@ Point demo
 The point is at [8, 77]
 :::
 
-## Default Constructors
+## Default constructors
 
 There is one thing missing from this implementation and that is a default constructor.
 

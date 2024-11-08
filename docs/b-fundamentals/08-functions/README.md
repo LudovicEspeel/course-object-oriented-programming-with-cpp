@@ -12,7 +12,7 @@ The C++ standard library provides numerous built-in functions that your program 
 
 Functions are given a symbolic name, allowing for easy calling of the functions and also making it more clear what the function does exactly (of course if the creator of the function gives it a clear and understandable name).
 
-## Calling Existing Functions
+## Calling existing functions
 
 To call a function, you need to pass the required parameters along with the function name. If the function returns a value, then you can also store the returned value for later use. When a program calls a function, program control is transferred to the called function. A called function performs a defined task and when it is finished it returns program control back to the code that called the function, ready to execute the statement following the function call.
 
@@ -50,14 +50,14 @@ int main() {
 
 But how does one know how to call a certain function? Simple: by reading the online reference or documentation and by trying to understand the examples. Start by taking a look at the documentation of the `max()` function: [http://www.cplusplus.com/reference/algorithm/max/](http://www.cplusplus.com/reference/algorithm/max/).
 
-## Creating Custom Functions
+## Creating custom functions
 
 To create custom functions two components are required:
 
 * A function declaration (also called the prototype), which tells the compiler about a function's name, return type, and its parameters;
 * A function definition, which provides the actual body (implementation) of the function.
 
-### Defining a Function
+### Defining a function
 
 The general form of a C++ function definition looks like the template below
 
@@ -97,7 +97,7 @@ Some things to note:
 * The return value of the function is `int` so it needs to have a return statement that returns an integer value
 * It takes two parameters, namely `a` of type `int` and `b` also of type `int`. Each parameter needs an explicit type specification.
 
-### Declaring a Function
+### Declaring a function
 
 A function declaration tells the compiler about a functions name and how to call the function. The actual body of the function can be defined separately.
 
@@ -211,9 +211,9 @@ A **method** is a piece of code that is called by name that is **associated with
 
 While calling a function, there are three ways that arguments can be passed to a function
 
-* **Pass by value**: This copies the actual value of an argument into the formal parameter of the function. In this case, changes made to the parameter inside the function have no effect on the argument
-* **Pass by pointer**: This copies the address of an argument into the formal parameter. Inside the function, the address is used to access the actual argument used in the call. This means that changes made to the parameter affect the argument.
-* **Pass by reference**: This copies the reference of an argument into the formal parameter. Inside the function, the reference is used to access the actual argument used in the call. This means that changes made to the parameter affect the argument.
+* **Pass by value**: this copies the actual value of an argument into the formal parameter of the function. In this case, changes made to the parameter inside the function have no effect on the argument
+* **Pass by pointer**: this copies the address of an argument into the formal parameter. Inside the function, the address is used to access the actual argument used in the call. This means that changes made to the parameter affect the argument.
+* **Pass by reference**: this copies the reference of an argument into the formal parameter. Inside the function, the reference is used to access the actual argument used in the call. This means that changes made to the parameter affect the argument.
 
 By default, C++ uses pass by value to pass arguments. In general, this means that code within a function cannot alter the arguments used to call the function as it gets a copy of the value.
 
@@ -263,11 +263,11 @@ b: 136
 
 But what if we wanted this to work. Well then you need to pass the data using pointers or references. More on this later.
 
-::: insight Key insight - Return by Value
+::: insight Key insight - Return by value
 When returning a local variable from a function/method, the same applies. A copy of the local variable is returned (via the stack as we will see later on) after which the actual local variable goes out of scope and ceases to exist.
 :::
 
-## Passing an Array to a Function
+## Passing an array to a function
 
 In C++, just as any other datatypes, arrays can also be passed to functions.
 
@@ -308,11 +308,11 @@ Sum of numbers: 25
 
 Note how the `sizeof` operator can be used in the `main` function because that is where the array was declared. `size_t` is datatype that is often used for array size, the result of `sizeof`, indexing, ...
 
-::: tip Use std::vector where Possible
+::: tip Use std::vector where possible
 Modern C++ best practices include using an `std::vector` instead of an array where possible. This because `std::vector` is a class which allows for dynamically adding elements. It also tracks the number of elements currently residing in the vector. More on this later.
 :::
 
-### Passing a Multidimensional Array to a Function
+### Passing a multidimensional array to a function
 
 For passing a multidimensional array to a function in C++ one will need to specify all dimensions except the first when declaring the parameter. This is quitte an inconvenience:
 
@@ -352,9 +352,9 @@ Passing a multidimensional array in C++ is not pretty. There are a lot of caveat
 
 Try to solve the exercises yourself. Don't go copy pasting other people's solutions.
 
-### 1. Fail and Ignore
+### 1. Fail and ignore
 
-*The code snippet belows reads a number from the user between `1` and `10`. However if the user provides an unparsable value, such as a string, the application becomes unusable. Fix this by using the `cin` functions `fail()`, `clear()` and `ignore()`.*
+The code snippet belows reads a number from the user between `1` and `10`. However if the user provides an unparsable value, such as a string, the application becomes unusable. Fix this by using the `cin` functions `fail()`, `clear()` and `ignore()`.
 
 ```cpp
 #include <iostream>
@@ -375,7 +375,7 @@ int main() {
 
 ### 2. Foreach
 
-*What is wrong with the code below?*
+What is wrong with the code below?
 
 ```cpp
 #include <iostream>
@@ -400,9 +400,9 @@ int main() {
 }
 ```
 
-### 3. Sizeof Array
+### 3. Sizeof array
 
-*What is happening here? Why is the output of this code snippet wrong?*
+What is happening here? Why is the output of this code snippet wrong?
 
 ```cpp
 #include <iostream>
@@ -427,9 +427,9 @@ int main() {
 }
 ```
 
-### 4. Changing Array Values
+### 4. Changing array values
 
-*What is going on here? Why can the `messItUp` function change the values of the passed array?*
+What is going on here? Why can the `messItUp` function change the values of the passed array?
 
 ```cpp
 #include <iostream>

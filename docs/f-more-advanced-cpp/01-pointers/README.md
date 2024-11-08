@@ -122,9 +122,9 @@ This section contains some inaccurate information. In fact arrays are not consta
 > If you're passing an array by value, what you're really doing is copying a pointer - a pointer to the array's first element is copied to the parameter (whose type should also be a pointer the array element's type). This works due to array's decaying nature; once decayed, sizeof no longer gives the complete array's size, because it essentially becomes a pointer. This is why it's preferred (among other reasons) to pass by reference or pointer.
 
 ```cpp
-void by_value(const T *array)   // const T array[] means the same
-void by_pointer(const T (*array)[U])
-void by_reference(const T (&array)[U])
+void byBalue(const T *array)   // const T array[] means the same
+void byPointer(const T (*array)[U])
+void byReference(const T (&array)[U])
 ```
 
 The last two will give proper sizeof info, while the first one won't since the array argument has decayed to be assigned to the parameter. The big problem here is that the constant `U` should be known at compile-time.
@@ -400,11 +400,11 @@ Since arrays are nothing more than constant pointers to the first element in the
 
 using namespace std;
 
-void print_numbers(int values[], unsigned int length) {
+void printNumbers(int values[], unsigned int length) {
   // We need length here because size(values) would return the
   // sizeof a pointer here (even compiler warns about this)
   // Try it:
-  cout << "sizeof(values) in print_numbers: "
+  cout << "sizeof(values) in printNumbers: "
     << sizeof(values) << " bytes" << endl << endl;
 
   cout << "| ";

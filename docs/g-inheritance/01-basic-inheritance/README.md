@@ -2,7 +2,7 @@
 description: needs to be done
 ---
 
-# Basic Inheritance
+# Basic inheritance
 
 Code reuse is probable one of the most powerful features of an object oriented programming language. While most programming languages provide functions / procedures which provide a low-level construct for code reuse, object oriented programming languages take this an important step further. OOP languages allow us to define classes and create relations between these classes, facilitating not only code reuse but also better overall design.
 
@@ -26,7 +26,7 @@ The second approach is to create a new class as a derived type of an existing cl
 
 Both approaches are important cornerstones of an object oriented programming language.
 
-## Computer Store Example
+## Computer store example
 
 Consider a first example that is being build for an online computer web shop. A beginning developer has modeled some of the items that his client wants to sell online. However he has come to the conclusion that his design needs to be refactored. Below is a partial UML class diagram of the classes modeled without the use of inheritance. Each class has the full functionality implemented into the class itself.
 
@@ -58,11 +58,11 @@ Actually the class `Product` is not entirely accurate since games came into play
 
 ![Adding a Hardware class](./img/computer_store_with_hardware.png)
 
-## Introducing Inheritance
+## Introducing inheritance
 
 Inheritance allows a class to inherit (get) the properties and methods of another class. In other words, the **derived classes** inherits the state and behavior from the **base class**. The derived classes can add their own additional attributes and methods. These additional attributes and methods differentiate the derived classes from the base class.
 
-::: tip Inheritance = Extension
+::: tip Inheritance = extension
 Inheritance is also often described as a mechanism to **extend** the behavior and properties of the base class. This is just the reason why Java for example uses the *extends* keyword for inheritance.
 :::
 
@@ -100,7 +100,7 @@ Below is an overview:
 
 The same rules apply for access specifiers of methods.
 
-## Is-a Relationships
+## Is-a relationships
 
 The base class and derived class have an **"is-a"** relationship between them. Take the basic example of pets shown below.
 
@@ -124,9 +124,11 @@ Note that extending the base class is exactly what we are doing when implementin
 
 Depending on the context and strategy, inheritance can also be though of as **generalization**, where functionality of derived classes is extracted and placed inside a more generalized base class.
 
+<!--
 ### Detailed Animal, Pet and Cat example
 
 Cfr. example in the class: we are going to refactor [this code example](https://github.com/LudovicEspeel/course-object-oriented-programming-with-cpp-examples/tree/main/animals) and apply inheritance (and later also polymorphism).
+-->
 
 ## Constructors and inheritance
 

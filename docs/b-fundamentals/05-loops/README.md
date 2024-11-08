@@ -18,7 +18,7 @@ Programming languages provide various structures that allow you to loop a block 
 A single execution of the loop body is called an iteration.
 :::
 
-## The While Loop
+## The `while` loop
 
 A while loop statement in the C# programming language repeatedly executes a statement block as long as a given condition is true. The condition is checked before the code block is executed. This means that the code block of the while loop may not even run at all if the condition is not met from the beginning.
 
@@ -30,7 +30,7 @@ while (condition) {
 }
 ```
 
-## The Do-While Loop
+## The `do-while` loop
 
 A do while loop is used when the code block (body of the loop) needs to be executed at least once. After the first iteration the condition is checked which determines if the code block should be executed again or not.
 
@@ -65,7 +65,7 @@ Please enter a number between 1 and 10: 3
 
 Note that the `number` variable needs to be declared outside of the do-while loop if it is required in the condition.
 
-## The for loop
+## The `for` loop
 
 Basically a for loop is most often used when the number of iterations is pre-determined. A typical example would be a list of items where an actions needs to be applied to each item in the list.
 
@@ -133,7 +133,7 @@ After the for-loop i = 10
 </pre>
 :::
 
-## Endless Loops
+## Endless loops
 
 In embedded programming one will often find an endless loop in the `main` function or in the processing functions of threads:
 
@@ -151,11 +151,11 @@ while(true) {
 }
 ```
 
-::: tip Interrupt a Process
-`Ctrl+C` can interrupt (kill) the current foreground process running in the terminal. It sends the SIGINT signal to the process, which is technically just a request - most processes will honor it, but some may ignore it.
+::: tip Interrupt a process
+`Ctrl + C` can interrupt (kill) the current foreground process running in the terminal. It sends the SIGINT signal to the process, which is technically just a request - most processes will honor it, but some may ignore it.
 :::
 
-## Unconditional Branching Statements
+## Unconditional branching statements
 
 A branch statement is a statement in a computer program that can cause the application to follow a different path of execution (i.e. jump to another part of the program and start executing statements there).
 

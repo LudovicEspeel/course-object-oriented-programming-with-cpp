@@ -417,7 +417,7 @@ Try to solve the exercises yourself. Don't go copy pasting other people's soluti
 
 ### 1. Squaring a number
 
-*How would you square the value in `x` and store it in `squared`? Use only the basic math operators.*
+How would you square the value in `x` and store it in `squared`? Use only the basic math operators.
 
 ```cpp
 int x = 12;
@@ -427,7 +427,7 @@ int squared;
 
 ### 2. 24 hours
 
-*Consider the following example, a code snippet from a student, programming a clock which can display the time in `24h` format. The student however has a small problem where the hours sometimes become bigger than `23`. Can you think of a single operator statement to limit the hours to a value between `0` and `23`?*
+Consider the following example, a code snippet from a student, programming a clock which can display the time in `24h` format. The student however has a small problem where the hours sometimes become bigger than `23`. Can you think of a single operator statement to limit the hours to a value between `0` and `23`?
 
 ```cpp
 int hours = 25;
@@ -437,7 +437,7 @@ int hours = 25;
 
 ### 3. Incrementing an expression
 
-*Knowing what you know now, could you answer the following question? Would it be possible to use the increment operator on an expression as demonstrated in the following code snippet?*
+Knowing what you know now, could you answer the following question? Would it be possible to use the increment operator on an expression as demonstrated in the following code snippet?
 
 ```cpp
 int x = 12;

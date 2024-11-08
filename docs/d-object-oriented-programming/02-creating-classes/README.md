@@ -2,13 +2,13 @@
 description: needs to be done
 ---
 
-# Creating Classes
+# Creating classes
 
 Classes are the central feature of C++ that support the Object Oriented Programming paradigm. They are often called user-defined types. Classes are the representation of elements from the problem space inside the solution space. They combine both **data** (attributes) and **behavior** (methods) into one neat little package (also known as **encapsulation**).
 
 In C++ the attributes and methods within a class are called the **members** of that class.
 
-## Class Definition
+## Class definition
 
 To define a class is to create a sort of blueprint for objects of that class. A class definition does not actually reserve any memory. It does however inform the compiler:
 
@@ -92,7 +92,7 @@ As can be seen from the previous example code, there are different ways to use a
 * When using `<....>` with an `#include` directive you are telling the compiler to search for the header file within the **standard libraries of C++** and within the include paths made available to the compiler (for example externally installed libraries).
 * When using `"...."` with an `#include` directive you are telling the compiler to search for the header file within the **current project directory**.
 
-### Include Guards
+### Include guards
 
 When including files, the preprocessor will actually take the content from the header-file and replace the `#include` directive with the content.
 
@@ -135,7 +135,7 @@ class Point {
 
 It also makes the code shorter and more clear.
 
-## Always use Namespaces
+## Always use namespaces
 
 When defining classes one should **always place them inside a namespace**. This can be achieved by surrounding the class definition with a namespace definition as shown in the next code snippet.
 
@@ -217,7 +217,7 @@ Note that one doesn't have to invent a namespace name for every class. A namespa
 Make sure that the name of your namespace is unique if possible. The chances of including a library that has the same namespace name is low but not uncommon. Just make sure to name namespaces differently than your classes, otherwise their might be ambiguity between the types.
 :::
 
-## Adding Data - Attributes
+## Adding data - attributes
 
 **Attributes** or **class instance variables** are the way to **store data inside an object** of that particular class.
 
@@ -241,7 +241,7 @@ namespace Geometry {
 };
 ```
 
-::: warning Initialize Attributes
+::: warning Initialize attributes
 Make sure to always initialize your attributes as shown in the previous example using direct initialization or use a constructor. Never leave attributes uninitialized as they will contain undefined values.
 :::
 
@@ -284,7 +284,7 @@ class Foo {
 };
 ```
 
-## Adding Behavior - Methods
+## Adding behavior - methods
 
 While **attributes store the data** of our objects, **methods allow objects to have behavior**. In C++ the declaration and actual definition of methods are separated. Inside the class definition we put the declarations of the methods, also known as the method **prototypes**.
 
@@ -370,7 +370,7 @@ If we had used `x = x`, it would have resulted in the arguments being assigned t
 
 No access modifier needs to be specified here for the definition of the methods. This is only done inside the class definition.
 
-### Adding Getters
+### Adding getters
 
 Let us expand this example with methods that return the values of the coordinates. Since these methods do not change the state of the object and just return a part of it's state to the outside world, they are called **getter methods**.
 
@@ -434,7 +434,7 @@ Note that for the getters there is no ambiguity for the attributes. Therefore, w
 
 Note that also in the method definition the `const` keyword is repeated.
 
-## Creating Objects
+## Creating objects
 
 To create objects on the stack, the same syntax can be used as for creating variables of a primitive type.
 
@@ -556,7 +556,7 @@ namespace Geometry {
 
 Basically the delta is added to the current coordinates making it move by delta.
 
-### 2. Copying Objects
+### 2. Copying objects
 
 What would you expect to be the output of the following code? What happens when you create a second object and initialize it with the first?
 

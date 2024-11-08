@@ -14,15 +14,15 @@ Arrays are among the oldest and most important data structures, and are used by 
 
 Arrays are useful mostly because the element indices can be computed at run time. Among other things, this feature allows a single iterative statement to process arbitrarily many elements of an array. For that reason, the elements of an array data structure are required to have the same size and should use the same data representation.
 
-::: tip 🔍 Lookup Tables
+::: tip 🔍 Lookup tables
 Arrays are often used to implement tables, especially lookup tables; the word **table** is sometimes used as a synonym of array. In computer science, a lookup table is an array that replaces runtime computation with a simpler array indexing operation. The savings in terms of processing time can be significant, since retrieving a value from memory is often faster than undergoing an "expensive" computation or input/output operation. The tables may be precalculated and stored in static program storage, calculated (or "pre-fetched") as part of a program's initialization phase.
 :::
 
-## One Dimensional Arrays
+## One dimensional arrays
 
 An array is a **container object** that holds a **fixed number of values** of a **single type**. The length of an array is established when the array is created. After creation, its length is fixed.
 
-The next code example shows how to declare and create an array of `10` integers:
+The next code example shows how to declare and create an array of 10 integers:
 
 ```cpp
 int someNumbers[10];
@@ -65,7 +65,7 @@ The average equals 227.6
 
 From the code above it can be seen that the array elements can be accessed by using `[]` with the index specified between them.
 
-## Quick Initialization
+## Quick initialization
 
 It is perfectly possible to initialize all array elements using a for-loop construct as shown below.
 
@@ -147,11 +147,11 @@ The size of the array is 22
 
 Pre-C99, the length of the array had to be known at compile time. Only a literal, defined value or constant was allowed for the declaration size of an array.
 
-::: warning Not part of the C++ Standard
+::: warning Not part of the C++ standard
 Note that VLAs are not present in the C++ standards, even as an optional feature. The only reason some compilers support this feature, is to be compatible with C. Even many C implementations never supported VLAs (for example some embedded systems compilers). As of C11 this feature has become optional.
 :::
 
-## Multi-Dimensional Arrays
+## Multi-dimensional arrays
 
 C++ allows the declaration of multi-dimensional arrays. Multidimensional arrays can be described as **"arrays of arrays"**. Below is the general declaration template of such a structure:
 
@@ -206,7 +206,7 @@ Resulting in the following output:
 
 As multi-dimensional arrays can become complex quite fast, it is important to name your indexes clearly and also to keep it as simple as possible.
 
-## Sizeof an Array
+## Sizeof an array
 
 When using the `sizeof` operator on an array, the result will be the total number of bytes required by the array to store all the elements.
 
@@ -260,7 +260,7 @@ Sizeof first dimension: 16 bytes. It holds 4 elements.
 </pre>
 :::
 
-## Foreach Loop
+## Foreach loop
 
 A foreach loop is used to access elements of an array quickly without the hassle of initializing an iterator, testing and increment/decrement that iterator. The idea of a foreach loop is to do something with every element rather than doing something a number of times.
 
@@ -321,9 +321,9 @@ More on references later. <!-- TODO: Checkout chapter xxx -->
 
 Try to solve the exercises yourself. Don't go copy pasting other people's solutions.
 
-### 1. Day of the Week
+### 1. Day of the week
 
-*Refactor the following code snippet using an array of `std::string` elements and lookup the result.*
+Refactor the following code snippet using an array of `std::string` elements and lookup the result.
 
 ```cpp
 #include <iostream>
@@ -366,8 +366,8 @@ int main() {
 }
 ```
 
-### 2. Matrix and Vector Multiplication
+### 2. Matrix and vector multiplication
 
-*Check the vector and matrix multiplication below by writing a small application for it.*
+Check the vector and matrix multiplication below by writing a small application for it.
 
 ![Matrix and vector multiplication](./img/matrix_vector_multiplication.png)

@@ -131,7 +131,7 @@ clean:
 	rm -f *.o $(EXECUTABLE)
 ```
 
-## A More Complex Hello World Example
+## A more complex Hello world example
 
 Now what if your project contained more files than just a simple `main.cpp` file. This will be the case for most projects.
 
@@ -171,7 +171,7 @@ clean:
 	rm -f *.o $(EXECUTABLE)
 ```
 
-## A Generic Makefile
+## A generic Makefile
 
 A more generic but a bit less readable makefile is shown next. It automatically compiles all `.cpp` files in a subdirectory `src` and places the final executable in a directory `bin`.  The only downside is that it **only works on Linux**.
 
@@ -227,7 +227,7 @@ install:
 makebuildir:
 	mkdir -p ${BUILDDIR}
 ```
-## Simplified Generic Makefile
+## Simplified generic Makefile
 
 A simplified generic version, works in many situations. It is still a draft version...
 * On Windows: enable lines 23 and 30 (default) and disable the other ones.

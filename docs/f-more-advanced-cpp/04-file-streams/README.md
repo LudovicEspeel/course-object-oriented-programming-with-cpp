@@ -2,7 +2,7 @@
 description: Reading and writing data from and too files is a common practice in any application.
 ---
 
-# File Streams
+# File streams
 
 Until this point, we've mainly been using the `iostream` standard library, which provides the ability to read and write from and to the standard input and output using `cin` and `cout`.
 
@@ -16,7 +16,7 @@ The `fstream` library defines three stream types which can be used:
 
 These classes are derived directly or indirectly from the classes `istream` and `ostream`. We have already been using objects from these classes, namely `cout` (of type `ostream`) and `cin` (of type `istream`). In other words, the operators `<<` and `>>` of these classes will also be applicable for the file streams. The only difference is that they are associated with physical files.
 
-## Instantiating a File Stream
+## Instantiating a file stream
 
 Before starting, one needs to create a stream object of the appropriate type. For example to write to a file, a `ofstream` object needs to be instantiated:
 
@@ -54,13 +54,13 @@ int main() {
 }
 ```
 
-## Opening and closing a File Stream
+## Opening and closing a file stream
 
 Before any action can be taken to transfer data with the file stream objects, they need to be associated to a file. This is realized by opening a file in a given mode. Once a file is open, any input or output operation performed on the stream object will be applied to the physical file associated with it.
 
 To open a file, the standard `void open(const char *filename, ios::openmode mode)` function can be used. The first argument, `char * filename`, is the path to the file which should be bound to the file stream. The second argument, `ios::openmode mode`, can take flags which determine the mode in which the file should be opened.
 
-| Mode Flag | Description |
+| Mode flag | Description |
 | --- | --- |
 | `ios::out`| Open file for writing. |
 | `ios::in` | Open file for reading. |
@@ -71,7 +71,7 @@ To open a file, the standard `void open(const char *filename, ios::openmode mode
 
 The before mentioned flags can be combined using the bitwise OR operator `|`. Each of the `open()` methods of the classes `ofstream`, `ifstream` and `fstream` have a default mode that is used if the file is opened without a mode argument:
 
-| File Stream | Default Mode |
+| File stream | Default mode |
 | --- | --- |
 | `ofstream` | `ios::out` |
 | `ifstream` | `ios::in` |
@@ -213,7 +213,7 @@ while (input >> value) {
 }
 ```
 
-### Reading Lines
+### Reading lines
 
 To read full lines from a file, one can also make use of the `getline()` function. Instead of passing the `cin` object, all one needs to do is pass the input file stream object.
 
@@ -245,7 +245,7 @@ int main() {
 }
 ```
 
-## State Flags
+## State flags
 
 Things can go wrong when reading data from files. The end of the file can be reached, the format of the data is not as expected, there is not enough space left to write to the data, ...
 

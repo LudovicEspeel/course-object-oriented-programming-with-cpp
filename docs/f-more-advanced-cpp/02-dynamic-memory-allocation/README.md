@@ -65,7 +65,7 @@ double foo(int x) {
   return sum;
 }
 
-int main(void) {
+int main() {
   int value = 55;
 
   // Calling a function uses the stack
@@ -98,7 +98,7 @@ The following program tries to reserve 10 million doubles on the stack. Of cours
 
 using namespace std;
 
-int main(void) {
+int main() {
   // This will create a stack overflow
   double loadsOfNumbers[10000000];
 
@@ -123,7 +123,7 @@ int count(int iNesting) {
   return count(iNesting);
 }
 
-int main(void) {
+int main() {
   // Call some recursive function that never stops.
   // This will generate a stack overflow
   count(0);
@@ -205,7 +205,7 @@ Allocating memory on the heap in C++ is accomplished using the `new` operator wh
 
 As mentioned before, it is critical that the memory be freed when it is not needed anymore. This can be achieved using the `delete` operator, called on the pointer. Every `new` should have a matching `delete` in your code. Failing to do so creates memory leaks in your application which can lead to program crashes.
 
-::: danger Memory Leak
+::: danger Memory leak
 A memory leak is created when memory is allocated but not released causing an application to consume memory reducing the available memory for other applications and eventually causing the system to page virtual memory to the hard drive slowing the application or crashing the application when the computer memory resource limits are reached. The system may stop working as these limits are approached.
 :::
 
@@ -218,7 +218,7 @@ Take a basic example that request an integer to be allocated on the heap. It use
 
 using namespace std;
 
-int main(void) {
+int main() {
   // Allocate integer on the heap
   int *number = new int;
   
@@ -282,7 +282,7 @@ A destructor has the following properties:
 For example:
 
 ```cpp
-Foo::~Foo(void) {
+Foo::~Foo() {
   // Do destruction stuff such as freeing memory
 }
 ```
@@ -298,7 +298,7 @@ Let us take a look at a basic example.
 
 using namespace std;
 
-int main(void) {
+int main() {
   // Allocate array of integers on the heap
   int *numbers = new int[5];
   
@@ -362,7 +362,7 @@ The implementation that belongs to the previous header file is shown below.
 
 using namespace Hardware;
 
-RgbLed::RgbLed(void) : RgbLed(Color(255, 0, 0)) {}
+RgbLed::RgbLed() : RgbLed(Color(255, 0, 0)) {}
 
 RgbLed::RgbLed(const Color &color)
 {
@@ -388,7 +388,7 @@ string RgbLed::getString() const
 While most of the code is self-explanatory, the default constructor does need some explanation.
 
 ```cpp
-RgbLed::RgbLed(void) : RgbLed(Color(255, 0, 0)) {}
+RgbLed::RgbLed() : RgbLed(Color(255, 0, 0)) {}
 ```
 
 The part after the colon `:` is called the **constructor-initialization list** and is executed before the body of the constructor. Here it allows us to call another constructor of the same class before executing the code of the current constructor. This allows us to keep the code as DRY as possible.
@@ -476,7 +476,6 @@ Since objects of this class will be allocating dynamic memory (the array of leds
 ```cpp
 // RgbLedBar.cpp
 #include "RgbLedBar.h"
-#include <iostream>
 
 using namespace Hardware;
 
@@ -484,15 +483,12 @@ RgbLedBar::RgbLedBar() : RgbLedBar(DEFAULT_SIZE) {}
 
 RgbLedBar::RgbLedBar(unsigned int numberOfLeds)
 {
-  cout << "constructor" << endl;
-
   this->numberOfLeds = numberOfLeds;
   leds = new RgbLed[this->numberOfLeds];
 }
 
 RgbLedBar::~RgbLedBar()
 {
-  cout << "destructor" << std::endl;
   delete[] leds;
   leds = nullptr;
 }

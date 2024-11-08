@@ -8,7 +8,7 @@ An enumeration is a distinct type whose value is restricted to a specific range 
 
 Enums are used to assign names to the integral constants which makes a program easy to read and maintain.
 
-## Defining an Enumeration
+## Defining an enumeration
 
 An enumeration is a user-defined data type that consists of integral constants. To define an enumeration, the keyword `enum` is used.
 
@@ -39,7 +39,7 @@ Today we are the 2th day of the week.
 </pre>
 :::
 
-## Renumbering an Enum
+## Renumbering an enum
 
 By default, the first element in an `enum` is assigned `0`, the second `1` and so on. These default values can be changed during declaration if needed.
 
@@ -68,7 +68,7 @@ enum Season {
 };
 ```
 
-## Scoped Enums
+## Scoped enums
 
 In the original C and C++ `enum` types, the unqualified enumerators are visible throughout the scope in which the enum is declared. In scoped enums, the enumerator name must be qualified by the enum type name.
 
@@ -86,7 +86,7 @@ Suit cardSuit = Suit::HEARTS;
 
 This prevents collisions and also makes code more clear.
 
-### Enums for Flags
+### Enums for flags
 
 Enums are often used when **flags** need to be passed to a function. Instead of passing a variable for each flag, the flags are combined using an enum where the values are powers of two.
 

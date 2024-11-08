@@ -238,13 +238,13 @@ A statement is an expression that expresses some action to be carried out. This 
 
 Try to solve the exercises yourself.
 
-### 1. endl
+### 1. `endl`
 
-*What does `std::endl` do? It is often found after outputting some information to the terminal. What is the difference with `"\n"`?*
+What does `endl` do? It is often found after outputting some information to the terminal. What is the difference with `"\n"`?
 
 ### 2. Namespace std
 
-*Alter the hello world application by removing the statement `using namespace std;`. Fix the statements that fail by prefixing the required components with `std::`. Try to get the application to compile and run.*
+Alter the hello world application by removing the statement `using namespace std;`. Fix the statements that fail by prefixing the required components with `std::`. Try to get the application to compile and run.
 
 ```cpp
 #include <iostream>
@@ -261,11 +261,11 @@ int main() {
 
 ### 3. Status code
 
-*Create a small C++ application that returns a value other than `0`. Typically a negative number is returned to indicate that something went wrong. Run that application using a terminal and show the status code.*
+Create a small C++ application that returns a value other than `0`. Typically a negative number is returned to indicate that something went wrong. Run that application using a terminal and show the status code.
 
 ### 4. Personalized output
 
-*Alter the hello world application to output a personalized message. Try to output a text stating who made the application. Also state where you are currently following this course.*
+Alter the hello world application to output a personalized message. Try to output a text stating who made the application. Also state where you are currently following this course.
 
 ```cpp
 #include <iostream>

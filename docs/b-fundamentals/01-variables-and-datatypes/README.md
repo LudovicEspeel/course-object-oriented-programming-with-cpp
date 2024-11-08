@@ -478,19 +478,19 @@ Try to solve the exercises yourself. Don't go copy pasting other people's soluti
 
 ### 1. Data vs. information
 
-*What is the difference between data and information? Give an example.*
+What is the difference between data and information? Give an example.
 
 ### 2. Initialization is mandatory
 
-*Why do we need to initialize variables? What happens if we don't initialize a variable?*
+Why do we need to initialize variables? What happens if we don't initialize a variable?
 
 ### 3. Define a variable for age
 
-*How would you define a variable to store the age of a person in? Make sure to give it an appropriate name. Explain why you choose that exact data type.*
+How would you define a variable to store the age of a person in? Make sure to give it an appropriate name. Explain why you choose that exact data type.
 
 ### 4. Multiple variable definitions
 
-*Rewrite the following code snippet so each variable is defined separately.*
+Rewrite the following code snippet so each variable is defined separately.
 
 ```cpp
 int daysInAWeek, weeksInAYear, monthsInAYear;
@@ -498,7 +498,7 @@ int daysInAWeek, weeksInAYear, monthsInAYear;
 
 ### 5. Assigning a value
 
-*How would you assign the correct value to each of the variables in the following code snippet.*
+How would you assign the correct value to each of the variables in the following code snippet.
 
 ```cpp
 int daysInAWeek;
@@ -506,9 +506,9 @@ int weeksInAYear;
 int monthsInAYear;
 ```
 
-### 6. Printing Variables
+### 6. Printing variables
 
-*Expand the following code snippet by outputting each variable's value to the terminal. Also print a label before each value.*
+Expand the following code snippet by outputting each variable's value to the terminal. Also print a label before each value.
 
 ```cpp
 int secondsInAMinute = 60;
@@ -518,7 +518,7 @@ int daysInAYear = 365;
 
 ### 7. Literals
 
-*What are the literals in the code snippet below?*
+What are the literals in the code snippet below?
 
 ```cpp
 int a = 1;
@@ -532,7 +532,7 @@ cout << "c = " << c << endl;
 
 ### 8. Refactoring defines
 
-*Refactor the code snippet below that makes use of a `define` statement where a constant could have been used. Don't mind the arithmetics for now.*
+Refactor the code snippet below that makes use of a `define` statement where a constant could have been used. Don't mind the arithmetics for now.
 
 ```cpp
 #define PI 3.1415
@@ -544,7 +544,7 @@ double circleArea = PI * radius * radius;
 
 ### 9. Magic numbers have no meaning
 
-*The following code snippet calculates the total invoice amount that has to be paid. The calculation of the total amount contains a magic number. Can you fix it?*
+The following code snippet calculates the total invoice amount that has to be paid. The calculation of the total amount contains a magic number. Can you fix it?
 
 ```cpp
 double invoiceAmount = 2342.12;   // Just a random value

@@ -10,7 +10,7 @@ C++ is a **general-purpose programming language** created by **Bjarne Stroustrup
 
 Some computer languages are written for a specific purpose. Like, Java was initially devised to control toasters and some other electronics. C was developed for programming operating systems. Pascal was conceptualized to teach proper programming techniques. But C++ is a general-purpose language. It well deserves the widely acknowledged nickname "Swiss Pocket Knife of Languages".
 
-C++ is standardized by the International Organization for Standardization (ISO), with the latest standard version ratified and published by ISO in December 2020 as ISO/IEC 14882:2020 (informally known as C++20). The C++ programming language was initially standardized in 1998 as ISO/IEC 14882:1998, which was then amended by the C++03, C++11, C++14, and C++17 standards. Since 2012, C++ has been on a three-year release schedule with C++23 as the next planned standard.
+C++ is standardized by the International Organization for Standardization (ISO), with the latest standard version ratified and published by ISO in December 2020 as ISO/IEC 14882:2020 (informally known as C++20). The C++ programming language was initially standardized in 1998 as ISO/IEC 14882:1998, which was then amended by the C++03, C++11, C++14, and C++17 standards. Since 2012, C++ has been on a three-year release schedule with C++23 as the latest standard.
 
 ## Philosophy
 

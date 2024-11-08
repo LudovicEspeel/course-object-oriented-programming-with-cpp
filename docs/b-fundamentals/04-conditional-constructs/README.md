@@ -2,11 +2,11 @@
 description: needs to be done
 ---
 
-# Conditional Constructs
+# Conditional constructs
 
 Conditional constructs are features of a programming language, which perform different computations or actions depending on whether a programmer-specified conditional expression evaluates to `true` or `false`.
 
-## The if Statement
+## The `if` statement
 
 The statements inside your source files are generally executed from top to bottom (in the order that they appear). Control flow statements, however, break up the flow of execution by employing decision making, enabling your program to conditionally execute particular blocks of code. This section describes the `if` and `if-else` statements that allow code to be executed based on a given condition.
 
@@ -34,7 +34,7 @@ Warning, temperature is too high!
 
 If this test evaluates to `false` (meaning that the temperature is below `85`), control jumps to the end of the if statement.
 
-## The if-else Statement
+## The `if-else` statement
 
 The if-else statement provides a secondary path of execution when an "if" clause evaluates to `false`. Taking the previous example you could output an "all is good" message when the temperature is below the threshold value.
 
@@ -88,7 +88,7 @@ Time to run!
 
 You may have noticed that the value of `temperature` can satisfy more than one expression in the combined statements. However the conditions are checked sequentially and once a condition is satisfied, the appropriate statements are executed and the remaining conditions are not evaluated anymore. Control then jumps to the end of the if-else statements.
 
-## The `switch` Statement
+## The `switch` statement
 
 A `switch` statement allows a variable to be tested for equality against a list of known values. Each value is called a case, and the variable being switched on is checked for each case.
 
@@ -205,7 +205,7 @@ Some important points about the switch statement:
 * The `break` statement is optional. If omitted, execution will continue on into the next case. The flow of control will fall through to subsequent cases until a `break` is reached.
 * Nesting of switch statements is allowed, which means you can have switch statements inside another switch. However nested switch statements should be avoided as it makes code more complex and less readable.
 
-### Scope in Switch
+### Scope in switch
 
 One final warning with switch statements requires a bit more explanation. Care must be taken when one defines variables inside the case's, for example for holding a temporary math result.
 

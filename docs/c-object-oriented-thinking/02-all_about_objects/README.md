@@ -2,7 +2,7 @@
 title: All About Objects
 ---
 
-# All About Objects
+# All about objects
 
 <!-- This chapter needs a serious refactor -->
 
@@ -10,9 +10,9 @@ This chapter will give a detailed introduction in the concepts of object oriente
 
 <!-- TODO: Place a picture here with all keywords of OOP. Maybe even write it by hand. -->
 
-## What are Objects
+## What are objects?
 
-What is an object ?
+What is an object?
 
 Sounds like a complex question, but the answer is actually really simple. Humans already tend to **think in terms of objects**, without taking to much effort. Students already know about objects, even if they don't realize it.
 
@@ -24,7 +24,7 @@ Basically one can state that something is an object if:
 * has certain **characteristics**;
 * has certain **actions** that can be done to it or can be accomplished with it.
 
-### Object Characteristics
+### Object characteristics
 
 If you are reading this in a classroom, then take a look around you. Try to focus on a person in the room. She/he is the perfect example of an object. First of all he/she has a name which uniquely identifies this person.
 
@@ -44,7 +44,7 @@ In object oriented programming these **characteristics** are often referred to a
 
 Each object holds its own state. This means that you can have a person in the classroom that is sleeping and another that is sitting straight. If one person grows an inch over a couple of months, this does not mean the others do so too. They each have their own individual state.
 
-### Object Behavior
+### Object behavior
 
 ![Behavior of a person](./img/person_methods.jpg)
 
@@ -62,7 +62,7 @@ In object oriented programming these are called the **methods** of an object. Th
 
 Most of the actions that are performed by or to an object are based on the current state of the object. If a person is not hungry he/she will react differently when given an apple than when you have been starving him/her for weeks.
 
-### Objects Talk to Each other
+### Objects talk to each other
 
 Most objects will only become useful if they can **interact with other objects**. Take for example a chair in the middle of a room full of people. The chair is pretty useless until someone decides to sit on it.
 
@@ -74,15 +74,15 @@ Take a look at the following example. It defines two people (objects): Xander an
 
 While the diagram above is no official standard it does however places a base for the UML standard that will later be used in this course. Note how attributes and methods are separated. It also shows some programming basics such as the parentheses after a name of a method or the naming conventions of the attributes.
 
-### Definition of an Object
+### Definition of an object
 
 All this leads to a more formal definition of an object:
 
-::: tip Definition of an Object
+::: tip Definition of an object
 An object is an entity that contains both data (attributes) and behavior (methods). Objects exchange information with each other and request actions from one another by sending messages. In code this is achieved by calling the methods of the objects. These methods can act upon the current state of the object and also make changes to it.
 :::
 
-### Quick Summary
+### Quick summary
 
 * Objects are the building blocks of an OO program
 * A program is basically a **collection of objects**
@@ -92,11 +92,11 @@ An object is an entity that contains both data (attributes) and behavior (method
 * Objects **interact** with each other by sending messages
   * In the form of **method calls**
 
-## Why OOP
+## Why OOP?
 
 Before the mid 1970s software engineers followed a programming methodology called **structured programming**.
 
-::: tip Structured Programming
+::: tip Structured programming
 Structured programming is a programming paradigm aimed at improving the clarity, quality, and development time of a computer program by making extensive use of subroutines, block structures, for and while loops—in contrast to using simple tests and jumps such as the `goto` statement, which could lead to "spaghetti code" that is difficult to follow and maintain. It emerged in the late 1950s with the appearance of the ALGOL 58 and ALGOL 60 programming languages, with the latter including support for block structures.
 :::
 
@@ -108,7 +108,7 @@ Take for example a car. In structured programming the properties of the car and 
 
 Applying the object oriented paradigm, all these properties (called attributes then) and actions (called methods then) would be combined into a single logical entity (the object) called a **Car**. An car object is able to use its internal attributes and perform certain actions. It can be thought of as a single independent unit rather than an separated but entangled bunch of functions and data.
 
-### List of Numbers
+### List of numbers
 
 Let us take a look at a more software oriented example. Take for example a simple application that holds a list (an array) of integers taken as input from the user. The application has at least two properties to track: the numbers themselves and how many entries are in the array.
 
@@ -130,7 +130,7 @@ While not only cleaner, more logical and maintainable, the object oriented appro
 
 Aristotle was one of the first to study the concept of **type**. He spoke of *the class of fishes and the class of birds*. The idea is that each object is unique (because of their state) but is also part of a class of objects that share characteristics and behavior.
 
-### Creating Objects
+### Creating objects
 
 Objects do not just sprout from memory when needed. In a computer program, objects are created based on a sort of blueprint, called a **class**. The objects that are created based on this particular class are called it's **instances**.
 
@@ -156,7 +156,7 @@ The resulting cookies are the instances of the class called objects.
 
 When we create objects we instantiate totally distinct instances of a class. **Each object contains its own copy of the data**. This means that if you change the data of one object, it will not affect the data of another object; at least not for primitive data types as we will see later on.
 
-### Definition of a Class
+### Definition of a class
 
 All this leads to a more formal definition of a class:
 
@@ -164,7 +164,7 @@ All this leads to a more formal definition of a class:
 A class is a "group, set or kind sharing common attributes". They are the essential blueprints used to create unique objects from the class type. All objects created from a single class are called instances of that particular class.
 :::
 
-## Interface of an Object
+## Interface of an object
 
 Objects can be manipulated by sending them messages. Objects satisfy the requests that are being send to them (ex. draw something on the screen, complete a bank transaction, download a file from the Internet, ...).
 
@@ -186,7 +186,7 @@ The diagram above follows the UML standard (Unified Modeling Language). The diag
 
 Except for the name of the class, the other parts of the diagram are optional and are only added when useful.
 
-## Reusing Implementation
+## Reusing implementation
 
 <!-- This section is probable not 100% correct -->
 
@@ -210,7 +210,7 @@ The simplest way to reuse a class is by creating objects from it and using those
 
 An association represents a relationship between two or more objects where all objects have their own lifecycle and there is no owner. The name of an association specifies the nature of relationship between objects. This is represented in UML by a solid line.
 
-::: tip Life Cycle
+::: tip Life cycle
 The life cycle of an object is the time between an object's creation and its destruction. Rules for object lifetime vary significantly between languages, in some cases between implementations of a given language, and lifetime of a particular object may vary from one run of the program to another.
 :::
 

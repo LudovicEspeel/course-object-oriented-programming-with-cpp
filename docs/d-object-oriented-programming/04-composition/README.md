@@ -12,7 +12,7 @@ Composition comes with a great deal of flexibility. Member objects of the new cl
 
 Because inheritance is one of the main pillars of object oriented design, it is often over-estimated and over-used. When used wrongly, it can result in awkward and overly-complicated designs. A good practice is to look at composition first when creating new classes as it is **simpler and more flexible**.
 
-## Association, Composition and Aggregation
+## Association, composition and aggregation
 
 The simplest way to use a class is by creating objects from it and using those objects. In other words **an object of one class may use services/methods provided by an object of another class**. This kind of relationship is termed as an **association**.
 
@@ -42,7 +42,7 @@ While a clear distinction is made here between aggregation and composition, it i
 To sum it up association is a very generic term used to represent when one class uses the functionalities provided by another class. It is sayed it's a composition if one parent class object owns another child class object and that child class object cannot meaningfully exist without the parent class object. If it can then it is called aggregation.
 :::
 
-## Creating new Classes Through Composition
+## Creating new classes through composition
 
 You probable have already been using composition without realizing it. Consider the example below of a class Product that might be used in an online web shop as a model for products that are sold.
 
@@ -62,7 +62,7 @@ By hiding the `PixelDisplay` object inside the `Canvas`, one hides the complexit
 
 Also if one ever wanted to switch from a backlit LCD pixel display to an OLED display, the classes that use the `Canvas` never even have to change.
 
-## Construction of Composite Objects
+## Construction of composite objects
 
 **Whenever an object of a class is instantiated, a constructor is called**. This however is not all that happens. When the object is composed of other objects, the **constructors of those sub-objects are also called**.
 
@@ -143,7 +143,7 @@ class Motorcycle {
 };
 ```
 
-### Basic Main Application
+### Basic main application
 
 The main program could be as simple as:
 
@@ -177,7 +177,7 @@ Important to think about is:
 
 This picture will become a bit more complicate
 
-## Constructor Initialization List
+## Constructor initialization list
 
 By default, the constructors invoked are the **default** ("no-argument") constructors. Moreover, all of these constructors are called before the class's own constructor is executed.
 
@@ -238,7 +238,7 @@ class Television {
 };
 ```
 
-::: warning Common Mistake
+::: warning Common mistake
 A common mistake for new C++ programmers is to try to call another constructor when defining the attributes as shown in the next code snippet:
 
 ```cpp
@@ -292,7 +292,7 @@ Constructing Television
 
 In practice most classes will have default constructors and if you need to change anything to the state of the internal objects you can often do this by calling the appropriate setters. However, if other constructors are available which initialize the sub-object to the wanted state, it is a good idea to use them as it keeps the code cleaner.
 
-## LineSegment Example
+## LineSegment example
 
 Let's apply all this knowledge on a class `LineSegment` that models a line from a start point to an end point. In the previous section (constructors) we've build a `Point` class that is perfect for this.
 
@@ -384,7 +384,7 @@ with a small demo app being:
 using namespace std;
 
 int main() {
-  cout << "Line Segment demo" << endl;
+  cout << "LineSegment demo" << endl;
 
   Geometry::Point start(7, 11);
   Geometry::Point end(-1, 5);
@@ -404,7 +404,7 @@ int main() {
 
 ::: output
 <pre>
-Line Segment demo
+LineSegment demo
 Line 0 has a length of 0
 Line 1 has a length of 10
 Line 2 has a length of 6.7082

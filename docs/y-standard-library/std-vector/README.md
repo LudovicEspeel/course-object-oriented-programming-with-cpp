@@ -10,16 +10,16 @@ Vectors are sequence containers representing arrays that can change in size.
 | --- | --- |
 | `std::vector` | `#include <vector>` |
 
-## Common Methods
+## Common methods
 
-| Common Methods | Description |
+| Common methods | Description |
 | --- | --- |
 | `.size()` | returns the number of elements |
 | `.push_back()` | add element to the end |
 | `.clear()` | remove all elements |
 | `operator[]` | access specified element |
 
-## Usage Example
+## Usage example
 
 ```cpp
 #include <iostream>
