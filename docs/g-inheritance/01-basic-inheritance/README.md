@@ -181,7 +181,7 @@ Quick summarization
 
 ## Method overriding
 
-Method overriding, in object oriented programming, is a language feature that allows a derived class or child class to provide a specific implementation of a method that is already provided by one of its base classes. The implementation in the derived class overrides (replaces) the implementation in the base class by providing a method that has the same name and the same parameters, and same return type as the method in the base class. An overriding method can also return a derived type of the type returned by the overridden method. This derived type is called a covariant return type.
+Method overriding, in object oriented programming, is a language feature that allows a derived class or child class to provide a specific implementation of a method that is already provided by one of its base classes. The implementation in the derived class overrides (replaces) the implementation in the base class by providing a method that has the same name and the same parameters (a.k.a. **signature**), and same return type as the method in the base class. An overriding method can also return a derived type of the type returned by the overridden method. This derived type is called a covariant return type.
 
 The version of a method that is executed will be determined by the object that is used to invoke it. If an object of a base class is used to invoke the method, then the version in the base class will be executed, but if an object of the derived class is used to invoke the method, then the version in the child class will be executed.
 
@@ -189,7 +189,7 @@ The ability of a derived class to override a method allows a class to inherit fr
 
 ![Method overriding](./img/shapes_method_overriding.png)
 
-The UML diagram above shows a couple of examples of method overriding. First of all there is the `draw()` method that is defined for the `Shape` class and its descendants. It takes no arguments and has no return value. Next there are the `getArea()` and `getCircumference()` methods which do return a `double`. Last is the `doesContain()` method which checks if the `Shape` contains a `Point`. It takes an argument and returns a value. Important to note is that the **signature** of all these methods are the same!
+The UML diagram above shows a couple of examples of method overriding. First of all there is the `draw()` method that is defined for the `Shape` class and its descendants. It takes no arguments and has no return value. Next there are the `getArea()` and `getCircumference()` methods which do return a `double`. Last is the `doesContain()` method which checks if the `Shape` contains a `Point`. It takes an argument and returns a value. Important to note is that the signature and return type of all these methods are the same!
 
 The rules for method overriding can be summarized as follows:
 

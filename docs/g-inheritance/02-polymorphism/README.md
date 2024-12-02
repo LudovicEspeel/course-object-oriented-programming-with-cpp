@@ -209,7 +209,7 @@ So polymorphism is again another technique that allows us to write short, clean 
 
 ### Virtual destructors
 
-The `virtual` keyword is not only important for methods we which to override and access via base class pointers. It is also important when considering dynamic memory usage. When reserving memory in your objects, you need to free it once the objects are destroyed. This is accomplished using the `delete` keyword. This has been discussed in detail in the chapter "Dynamic Memory Allocation".
+The `virtual` keyword is not only important for methods we which to override and access via base class pointers. It is also important when considering dynamic memory usage. When reserving memory in your objects, you need to free it once the objects are destroyed. This is accomplished using the `delete` keyword. This has been discussed in detail in the chapter "Dynamic memory allocation".
 
 However what if you extend this class. Is the destructor of the base class still called in that case?
 
