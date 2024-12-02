@@ -181,7 +181,7 @@ Quick summarization
 
 ## Method overriding
 
-Method overriding, in object oriented programming, is a language feature that allows a derived class or child class to provide a specific implementation of a method that is already provided by one of its base classes. The implementation in the derived class overrides (replaces) the implementation in the base class by providing a method that has the same name and the same parameters, and same return type as the method in the base class. These three parts are all together called the **signature of a method**. An overriding method can also return a derived type of the type returned by the overridden method. This derived type is called a covariant return type.
+Method overriding, in object oriented programming, is a language feature that allows a derived class or child class to provide a specific implementation of a method that is already provided by one of its base classes. The implementation in the derived class overrides (replaces) the implementation in the base class by providing a method that has the same name and the same parameters, and same return type as the method in the base class. An overriding method can also return a derived type of the type returned by the overridden method. This derived type is called a covariant return type.
 
 The version of a method that is executed will be determined by the object that is used to invoke it. If an object of a base class is used to invoke the method, then the version in the base class will be executed, but if an object of the derived class is used to invoke the method, then the version in the child class will be executed.
 
