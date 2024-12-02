@@ -2,9 +2,7 @@
 description: needs to be done
 ---
 
-# Operator Overloading
-
-*This chapter is an early draft. Bit more of a slide deck*.
+# Operator overloading
 
 Why operator overloading?
 * To use traditional operators with user-defined objects instead of using a function call on an object and passing another object to it.

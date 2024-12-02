@@ -4,8 +4,6 @@ description: needs to be done
 
 # Abstract classes and interfaces
 
-*This chapter is an early draft. Bit more of a slide deck*.
-
 * **Abstract classes** cannot be used to instantiate objects.
 * Abstract base classes are too general to create real objects: they specify only what is common among derived classes (it's a kind of foodprint).
 * Classes that can be used to instantiate objects are called **concrete classes**.
